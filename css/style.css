@@ -20,9 +20,28 @@
 }
 
 html {
-    font-size: 16px;
+    font-size: 10px;
     background-color: #f2ebe2;
     scroll-behavior: smooth;
+    scroll-padding-top: 200px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f2ebe2;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 3px solid #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
 }
 
 .nav-bar {
@@ -34,27 +53,27 @@ html {
     justify-content: space-between;
     width: 100%;
     background-color: #f2ebe2;
-    padding-top: 2rem;
-    padding-bottom: 2.5rem;
+    padding-top: 3rem;
+    padding-bottom: 3.5rem;
     box-shadow: 0px 2px 0px 0px #0c0e0c;
 }
 
 .nav-left {
-    margin-left: 3rem;
+    margin-left: 4rem;
 }
 
 .nav-right {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 3rem;
-    gap: 3rem;
+    margin-right: 4rem;
+    gap: 4rem;
 }
 
 .nav-title {
     font-family: 'Space Mono';
     font-weight: 1000;
-    font-size: 2rem;
+    font-size: 4rem;
     color: #0c0e0c;
     margin-right: 8rem;
     text-decoration: none;
@@ -70,7 +89,7 @@ html {
     justify-content: center;
     font-family: 'Uncut Sans';
     font-weight: 1000;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-decoration: none;
     color: #0c0e0c;
     transition-duration: 0.3s;
@@ -87,13 +106,13 @@ html {
     justify-content: center;
     font-family: 'Uncut Sans';
     font-weight: 1000;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-decoration: none;
     color: #0c0e0c;
     border: 2px solid #0c0e0c;
-    padding: 0.5rem;
+    padding: 1rem;
     box-shadow: 4px 4px 0px #0c0e0c;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     transition-duration: 0.3s;
 }
 
@@ -116,32 +135,32 @@ html {
 }
 
 .nav-icon {
-    width: 2rem;
-    height: 2rem;
-    margin-right: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 1rem;
 }
 
 h1 {
     font-family: 'Space Mono';
     font-weight: 1000;
-    font-size: 5rem;
+    font-size: 8rem;
     color: #0c0e0c;
     text-align: left;
 }
 
-h2 {
+.hero h2 {
     font-family: 'Uncut Sans';
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: #0c0e0c;
     text-align: left;
     margin-top: -2rem;
 }
 
-h3 {
+.hero h3 {
     font-family: 'Uncut Sans';
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: #0c0e0c;
     text-align: left;
     margin-top: -0.5rem;
@@ -151,9 +170,9 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6rem;
-    padding-top: 20rem;
-    padding-bottom: 30rem;
+    gap: 10rem;
+    padding-top: 30rem;
+    padding-bottom: 50rem;
 }
 
 .frame {
@@ -166,8 +185,8 @@ h3 {
 
 .frame img {
     display: block;
-    width: 20rem;
-    height: 20rem;
+    width: 30rem;
+    height: 30rem;
     object-fit: cover;
 }
 
@@ -175,7 +194,7 @@ h3 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-bottom: 4rem;
+    padding-bottom: 20rem;
 }
 
 .skills-header {
@@ -186,8 +205,8 @@ h3 {
 }
 
 .skills-header h1 {
-    font-size: 5rem;
-    padding-right: 5rem;
+    font-size: 8rem;
+    padding-right: 8rem;
 }
 
 .skills-container {
@@ -199,7 +218,7 @@ h3 {
 .skills-title {
     font-family: 'Space Mono';
     font-weight: 1000;
-    font-size: 2rem;
+    font-size: 3rem;
     color: #0c0e0c;
     text-align: center;
     margin-top: 1rem;
@@ -210,20 +229,21 @@ h3 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     margin-top: 2rem;
 }
 
 .skills-list h3 {
     font-family: 'Uncut Sans';
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #0c0e0c;
     text-align: center;
     border: 2px solid #0c0e0c;
-    padding: 0.5rem;
+    padding: 1rem;
     box-shadow: 4px 4px 0px #0c0e0c;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
+    margin-top: -1rem;
 }
 
 #html {
@@ -260,4 +280,75 @@ h3 {
 
 #figma {
     background-color: #f24e1e;
+}
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20rem;
+}
+
+.experience h1 {
+    margin-top: 0;
+}
+
+.timeline-event {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.timeline-event h2 {
+    font-family: 'Uncut Sans';
+    font-size: 4rem;
+    font-weight: 1000;
+}
+
+.timeline-event h3 {
+    font-family: 'Uncut Sans';
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.event-years {
+    display: flex;
+    justify-content: flex-end;
+    width: 45%;
+    padding-right: 5rem;
+    margin: 0;
+}
+
+.event-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 55%;
+}
+
+.event-description {
+    margin-top: -0.5rem;
+}
+
+.event-school {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.event-school h3 {
+    font-size: 1.5rem;  
+    border: 2px solid #0c0e0c;
+    padding: 0.5rem;
+    box-shadow: 3px 3px 0px #0c0e0c;
+    border-radius: 1rem;
+}
+
+#dlsu {
+    background-color: #087830;
+}
+
+#pcs {
+    background-color: #cc9966;
 }
