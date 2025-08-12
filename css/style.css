@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'Uncut Sans';
+    src: url('../fonts/UncutSans-Variable.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Analog Whispers';
+    src: url('../fonts/Analog-Whispers.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Space Mono';
+    src: url('../fonts/SpaceMono.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-size: 16px;
+    background-color: #f2ebe2;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+    box-shadow: 0px 3px 0px 0px #0c0e0c;
+}
+
+.nav-left {
+    margin-left: 3rem;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 3rem;
+    gap: 3rem;
+}
+
+.nav-title {
+    font-family: 'Space Mono';
+    font-weight: 1000;
+    font-size: 2rem;
+    color: #0c0e0c;
+    margin-right: 8rem;
+}
+
+.nav-title:hover {
+    font-style: italic;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Uncut Sans';
+    font-weight: 1000;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #0c0e0c;
+    transition-duration: 0.3s;
+}
+
+.nav-button:hover {
+    text-decoration: underline;
+    transition-duration: 0.3s;
+}
+
+.github-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Uncut Sans';
+    font-weight: 1000;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #0c0e0c;
+    border: 2px solid #0c0e0c;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    box-shadow: 4px 4px 0px #0c0e0c;
+    border-radius: 0.5rem;
+    transition-duration: 0.3s;
+}
+
+.github-button:hover {
+    background-color: #90d5ff;
+    transition-duration: 0.3s;
+}
+
+.nav-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+}
+
+h1 {
+    font-family: 'Space Mono';
+    font-weight: 1000;
+    font-size: 5rem;
+    color: #0c0e0c;
+    text-align: left;
+}
+
+h2 {
+    font-family: 'Uncut Sans';
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #0c0e0c;
+    text-align: left;
+    margin-top: -2rem;
+}
+
+h3 {
+    font-family: 'Uncut Sans';
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #0c0e0c;
+    text-align: left;
+    margin-top: -0.5rem;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    margin-top: 12rem;
+}
+
+.frame {
+    display: inline-block;
+    border: 3px solid #0c0e0c;
+    box-shadow: 6px 6px 0px #0c0e0c;
+    border-radius: 10%;
+    overflow: hidden;
+}
+
+.frame img {
+    display: block;
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+}
