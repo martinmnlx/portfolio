@@ -367,12 +367,78 @@ h1 {
 }
 
 .project-card {
-    width: 70rem;
+    display: flex;
+    width: 80rem;
     height: 40rem;
     border: 3px solid #0c0e0c;
     box-shadow: 6px 6px 0px #0c0e0c;
     border-radius: 1rem;
+    gap: 4rem;
+    padding: 2rem 4rem 2rem 2rem;
     margin-bottom: 10rem;
+}
+
+.project-image {
+    display: flex;
+    align-items: center;
+}
+
+.project-image img {
+    width: 27rem;
+    height: 36rem;
+    border: 3px solid #0c0e0c;
+    margin-left: 2rem;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-container h2 {
+    font-family: 'Space Mono';
+    font-size: 3rem;
+    font-weight: 1000;
+    margin-bottom: 3rem;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.info-container h4 {
+    font-family: 'Uncut Sans';
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #0c0e0c;
+    text-align: center;
+    border: 2px solid #0c0e0c;
+    padding: 0.5rem;
+    box-shadow: 4px 4px 0px #0c0e0c;
+    border-radius: 1rem;
+    margin: 0 0 3rem 0;
+}
+
+.project-container h3 {
+    font-family: 'Uncut Sans';
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+#ard {
+    background-color: #00979d;
+}
+
+#cp2 {
+    background-color: #659ad2;
+}
+
+#jav {
+    background-color: #f89820;
 }
 
 .contact {
