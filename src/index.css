@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Claudae';
+  src: url("./assets/fonts/claudae.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url("./assets/fonts/inter.ttf") format('truetype');
+}
+
+@theme {
+  --font-title: 'Claudae';
+  --font-body: 'Inter';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 16px;
+}
