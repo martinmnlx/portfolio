@@ -8,9 +8,9 @@ function NavBar() {
         bg-white/30 backdrop-blur-md 
         shadow-sm flex-wrap md:flex-nowrap
       ">
-        <h1 className="hidden md:block font-body text-gray-700 font-bold text-lg md:text-xl px-2 md:px-4">
+        <a href="#" className="hidden md:block font-body text-gray-700 font-bold text-lg md:text-xl px-2 md:px-4">
           Martin Manalo
-        </h1>
+        </a>
 
         <a href="#about" className='
           font-body text-gray-500 
