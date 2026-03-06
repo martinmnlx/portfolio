@@ -1,7 +1,7 @@
 function HeroSection({ id }) {
   const links = [
-    { label: 'GitHub', url: '#', icon: '🐙' },
-    { label: 'LinkedIn', url: '#', icon: '💼' },
+    { label: 'GitHub', url: 'https://github.com/martinmnlx', icon: '🐙' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/martin-d-manalo/', icon: '💼' },
     { label: 'Resume', url: '#', icon: '📄' }
   ];
 
