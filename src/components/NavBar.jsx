@@ -60,7 +60,7 @@ function NavBar() {
                 absolute top-[calc(100%+0.5rem)] left-0 right-0 
                 flex flex-col gap-1 p-2
                 border border-gray-200/50 rounded-2xl
-                bg-white/50 backdrop-blur-xl shadow-xl z-40
+                bg-white/50 backdrop-blur-md z-40
                 md:hidden
               "
             >
