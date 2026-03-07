@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Claudae';
-  src: url("./assets/fonts/claudae.ttf") format('truetype');
+  font-family: 'Google Sans';
+  src: url("./assets/fonts/google_sans.ttf") format('truetype');
 }
 
 @font-face {
@@ -11,14 +11,16 @@
 }
 
 @theme {
-  --font-title: 'Claudae';
+  --font-mono: 'Google Sans';
   --font-body: 'Inter';
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-size: 16px;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply tracking-tight;
+  }
 }

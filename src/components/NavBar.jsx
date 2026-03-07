@@ -1,15 +1,15 @@
 function NavBar() {
   return (
-    <nav className="sticky top-[1rem] md:top-[2rem] z-50 flex justify-center w-full px-[1rem]">
+    <nav className="sticky top-4 md:top-8 z-50 flex justify-center w-full px-4">
       <div className="
         flex justify-center items-center 
-        h-[3rem] md:h-[4rem] w-fit gap-[0.25rem] md:gap-[0.5rem] px-[0.5rem] md:px-[1rem]
-        border-1 border-gray-200/50 rounded-2xl
-        bg-white/30 backdrop-blur-md 
-        shadow-sm flex-wrap md:flex-nowrap
+        h-12 md:h-16 w-fit gap-1 md:gap-2 px-2 md:px-4
+        border-2 border-gray-200/50 rounded-2xl
+        bg-white/50 backdrop-blur-md 
+        flex-wrap md:flex-nowrap
       ">
-        <a href="#" className="hidden md:block font-body text-gray-700 font-bold text-lg md:text-xl px-2 md:px-4">
-          Martin Manalo
+        <a href="#" className="hidden md:block font-mono text-gray-700 font-bold text-lg md:text-xl px-2 md:px-4">
+          Martin M.
         </a>
 
         <a href="#about" className='

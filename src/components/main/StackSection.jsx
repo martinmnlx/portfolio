@@ -2,13 +2,13 @@ function StackSection({ id }) {
   const techData = {
     frontend: ["React", "Tailwind CSS", "Bootstrap", "JavaScript", "HTML5/CSS3"],
     backend: ["Node.js", "Python", "Java", "MySQL", "JDBC", "C", "C++"],
-    tools: ["Git", "GitHub", "VS Code", "Intellij", "Figma", "Vercel", "Discord"],
+    tools: ["Git", "GitHub", "VS Code", "Intellij IDEA", "Arduino IDE", "Figma", "Vercel"],
   };
 
   const ListItems = ({ items }) => (
     <div className="flex flex-wrap gap-2 mt-3">
       {items.map((item) => (
-        <span key={item} className="font-body px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-[0.5rem] border border-gray-200">
+        <span key={item} className="font-mono px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-[0.5rem] border border-gray-200">
           {item}
         </span>
       ))}

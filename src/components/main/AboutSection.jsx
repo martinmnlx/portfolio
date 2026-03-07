@@ -14,7 +14,7 @@ function AboutSection({ id }) {
           <div>
             <img 
               src="../src/assets/images/self.jpg" 
-              className="w-[12rem] h-[12rem] md:w-[15rem] md:h-[15rem] rounded-[1rem] shadow-sm border border-gray-200/50 mx-auto md:mx-0">
+              className="w-45 h-60 md:w-60 md:h-80 rounded-[1rem] shadow-sm border border-gray-200/50 mx-auto md:mx-0">
             </img>
           </div>
           <div className="flex-1">

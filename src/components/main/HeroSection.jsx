@@ -1,8 +1,8 @@
 function HeroSection({ id }) {
   const links = [
-    { label: 'GitHub', url: 'https://github.com/martinmnlx', icon: '🐙' },
+    { label: 'GitHub', url: 'https://github.com/martinmnlx', icon: '../src/assets/images/github.png' },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/martin-d-manalo/', icon: '💼' },
-    { label: 'Resume', url: '#', icon: '📄' }
+    { label: 'Resume', url: '../src/assets/CV_MANALO_CARLMARTIN.pdf', icon: '📄' }
   ];
 
   return (
@@ -14,17 +14,20 @@ function HeroSection({ id }) {
           Martin Manalo
         </h1>
         <h2 className='text-[1rem] md:text-[1.5rem] font-body font-semibold text-gray-500 text-center mb-[2rem] md:mb-[6rem]'>
-          Sophomore, Computer Science <span className="font-normal">at</span> De La Salle University
+          Sophomore, Computer Science <span className="font-normal">at</span> De La Salle University<br></br>
+          * Website is a WIP
         </h2>
         
-        <div className='flex flex-col sm:flex-row gap-[1rem] md:gap-[1.5rem] flex-wrap justify-center'>
+        <div className='flex flex-col sm:flex-row gap-2 md:gap-4 flex-wrap justify-center'>
           {links.map((link) => (
             <a
               key={link.label}
               href={link.url}
-              className='flex items-center justify-center gap-[0.5rem] px-[1.5rem] md:px-[2rem] py-[0.75rem] md:py-[0.875rem] bg-gray-900 text-white font-body font-semibold rounded-[0.8rem] hover:bg-gray-800 transition-colors duration-200 whitespace-nowrap'
+              target="_blank" 
+              rel="noreferrer"
+              className='flex items-center justify-center gap-2 px-4 py-3 bg-gray-900 text-white font-body font-semibold rounded-[0.8rem] hover:bg-gray-800 transition-colors duration-200 whitespace-nowrap'
             >
-              <span className='text-lg'>{link.icon}</span>
+              <img src={link.icon} className="w-4 h-4"></img>
               <span className='text-sm md:text-base'>{link.label}</span>
             </a>
           ))}

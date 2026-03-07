@@ -42,7 +42,8 @@ function ContactSection({ id }) {
           Get In Touch
         </h1>
         <p className="font-body text-gray-600 mb-[2rem] text-center">
-          Have a question or want to work together? Feel free to reach out!
+          Have a question or want to work together?<br></br>
+          Feel free to reach out!
         </p>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-[1.5rem]">

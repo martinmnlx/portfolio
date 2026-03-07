@@ -6,7 +6,13 @@ function EducationSection({ id }) {
       major: "Major in Software Technology",
       duration: "2024 - Present",
       gpa: "3.564",
-      relevantCourses: ["CCAPDEV", "CCINFOM", "CSADPRG", "CSINTSY"]
+      relevantCourses: [
+        "Web App Development", 
+        "Information (Database) Management", 
+        "Advanced Programming", 
+        "Intelligent Systems (AI/ML)",
+        "Algorithms and Complexity"
+      ]
     }
   ];
 
@@ -57,7 +63,7 @@ function EducationSection({ id }) {
                 {edu.relevantCourses.map((course) => (
                   <span
                     key={course}
-                    className="font-body px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-[0.5rem] border border-gray-200"
+                    className="font-mono px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-[0.5rem] border border-gray-200"
                   >
                     {course}
                   </span>
