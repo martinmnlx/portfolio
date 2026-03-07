@@ -9,10 +9,10 @@ function HeroSection({ id }) {
   return (
     <>
       <section id={id} className='w-full flex flex-col justify-center items-center pt-24 md:pt-48 pb-4 md:pb-16 px-4 md:px-8'>
-        <h1 className='text-5xl md:text-9xl font-body font-bold text-center mb-4'>
+        <h1 className='text-4xl md:text-9xl font-body font-bold text-center mb-4'>
           Martin Manalo
         </h1>
-        <h2 className='text-[1rem] md:text-[1.5rem] font-body font-semibold text-gray-500 text-center mb-8 md:mb-24'>
+        <h2 className='text-sm md:text-[1.5rem] font-body font-semibold text-gray-500 text-center mb-8 md:mb-24'>
           Sophomore, Computer Science <span className="font-normal">at</span> De La Salle University
         </h2>
         
