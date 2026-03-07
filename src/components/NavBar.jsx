@@ -20,11 +20,11 @@ function NavBar() {
         {/* Main Bar */}
         <div className="
           flex items-center justify-between 
-          h-12 md:h-16 w-full gap-4 px-5
+          h-12 md:h-16 w-full gap-4 px-5 md:pr-2.5
           border border-gray-200/50 rounded-2xl
           bg-white/50 backdrop-blur-md z-50
         ">
-          <a href="#" className="font-mono text-gray-800 font-bold text-lg md:text-xl whitespace-nowrap">
+          <a href="#" className="font-mono text-gray-800 md:px-2 font-bold text-lg md:text-xl whitespace-nowrap">
             Martin M.
           </a>
 
@@ -34,7 +34,7 @@ function NavBar() {
               <a 
                 key={item.href}
                 href={item.href} 
-                className='font-body font-medium text-gray-600 px-4 py-2 rounded-lg text-base transition-all duration-200 hover:bg-white/50 hover:text-gray-800'
+                className='font-body font-medium text-gray-600 px-4 py-2 rounded-lg text-base transition-all duration-200 hover:bg-white/50 hover:text-gray-800 hover:shadow-sm'
               >
                 {item.label}
               </a>
