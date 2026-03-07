@@ -17,7 +17,7 @@ function MainPage() {
         <AboutSection id="about"/>
         <EducationSection id="education"/>
         <StackSection id="stack"/>
-        <ProjectsSection id="projects"/>
+        {/* <ProjectsSection id="projects"/> */}
         <ContactSection id="contact"/>
       </div>
       <Footer />
