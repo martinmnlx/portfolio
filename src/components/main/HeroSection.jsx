@@ -26,7 +26,7 @@ function HeroSection({ id }) {
       {/* 1. The Name */}
       <motion.h1 
         {...fadeInUp}
-        className='text-5xl md:text-9xl font-body font-bold text-center mb-4 text-slate-800'
+        className='text-[2.75rem]/[1] md:text-9xl font-body font-bold text-center mb-4 text-slate-800'
       >
         Martin Manalo
       </motion.h1>
