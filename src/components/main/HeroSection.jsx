@@ -25,7 +25,7 @@ function HeroSection({ id }) {
                 href={link.url}
                 target="_blank" 
                 rel="noreferrer"
-                className='flex items-center justify-center gap-1.5 px-3 py-2 bg-gray-900 text-white font-body font-semibold rounded-xl hover:bg-gray-800 transition-colors duration-200 whitespace-nowrap'
+                className='flex items-center justify-center gap-1.5 px-3 py-2 bg-gray-900 text-white font-body font-medium rounded-xl hover:bg-gray-800 transition-colors duration-200 whitespace-nowrap'
               >
                 <Icon size={14} strokeWidth={2} />
                 <span className='text-sm md:text-base'>{link.label}</span>
