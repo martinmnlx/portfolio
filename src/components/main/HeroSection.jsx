@@ -26,9 +26,9 @@ function HeroSection({ id }) {
       {/* 1. The Name */}
       <motion.h1 
         {...fadeInUp}
-        className='text-[2.75rem]/[1] md:text-9xl font-body font-bold text-center mb-4 text-slate-800'
+        className='text-7xl md:text-9xl font-body font-bold text-center mb-4 text-slate-800'
       >
-        Martin Manalo
+        Martin<br className="md:hidden" /> Manalo
       </motion.h1>
 
       {/* 2. Role & University */}
@@ -40,7 +40,7 @@ function HeroSection({ id }) {
       >
         Software Engineer & UI Designer <br className="md:hidden" />
         <span className="hidden md:inline"> • </span> 
-        CS Sophomore at De La Salle University
+        CS Sophomore, De La Salle University
       </motion.h2>
       
       {/* 3. Social Links with stagger */}
