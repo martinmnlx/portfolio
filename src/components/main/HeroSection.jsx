@@ -1,4 +1,4 @@
-import { Github, Linkedin, ArrowRight } from 'lucide-react';
+import { Github, Linkedin, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 function HeroSection({ id }) {
@@ -82,7 +82,7 @@ function HeroSection({ id }) {
           href="#contact" 
           className='flex items-center gap-1.5 text-blue-600 font-semibold hover:gap-3 transition-all duration-300'
         >
-          Get in touch <ArrowRight size={18} />
+          Get in touch <MessageCircle size={18} />
         </a>
       </motion.div>
 
