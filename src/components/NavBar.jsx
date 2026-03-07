@@ -71,7 +71,7 @@ function NavBar() {
                   onClick={() => setIsOpen(false)}
                   className="
                     font-body font-medium text-gray-600 
-                    px-4 py-3 rounded-xl text-center
+                    px-4 py-2 rounded-xl text-center
                     transition-all duration-200 
                     hover:bg-white hover:text-gray-800
                   "
