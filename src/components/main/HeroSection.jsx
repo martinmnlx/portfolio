@@ -1,4 +1,4 @@
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, MessageCircle } from 'lucide-react';
 
 function HeroSection({ id }) {
   const links = [
@@ -16,7 +16,7 @@ function HeroSection({ id }) {
           Software Engineer | UX/UI Designer<br></br>Sophomore CS at De La Salle Univ.
         </h2>
         
-        <div className='flex flex-row gap-4 md:gap-4 flex-wrap justify-center'>
+        <div className='flex flex-row gap-4 md:gap-4 flex-wrap justify-center mb-4'>
           {links.map((link) => {
             const { Icon } = link;
             return (
@@ -25,13 +25,17 @@ function HeroSection({ id }) {
                 href={link.url}
                 target="_blank" 
                 rel="noreferrer"
-                className='flex items-center justify-center gap-1.5 px-3 py-2 bg-gray-900 text-white font-body font-medium rounded-xl hover:bg-gray-800 transition-colors duration-200 whitespace-nowrap'
+                className='flex items-center justify-center gap-1.5 px-3 py-2 bg-gray-900 text-white font-body font-medium  rounded-xl hover:bg-gray-800 transition-colors duration-200 whitespace-nowrap'
               >
                 <Icon size={14} strokeWidth={2} />
                 <span className='text-sm md:text-base'>{link.label}</span>
               </a>
             );
         })}
+        </div>
+        
+        <div className='flex flex-row font-body text-sm text-gray-800 font-medium gap-2'>
+          <h2>Need something done?</h2> <a href="#contact" className='flex flex-row justify-center items-center gap-1 text-gray-800 font-semibold hover:underline'><MessageCircle size={14} strokeWidth={2} />Let's talk!</a>
         </div>
       </section>
     </>
