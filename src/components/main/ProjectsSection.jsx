@@ -31,7 +31,7 @@ function ProjectsSection({ id }) {
         </span>
       </div>
       <h1 className="font-body text-3xl md:text-5xl font-bold text-gray-900 mb-[2rem] text-center">
-        Project Gallery
+        Project Gallery (Placeholder)
       </h1>
       
       <div className="overflow-x-auto pb-4 scrollbar-hide w-full -mx-[1rem] md:-mx-[2rem] px-[1rem] md:px-[2rem]">
