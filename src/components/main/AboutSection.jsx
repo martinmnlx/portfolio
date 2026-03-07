@@ -1,7 +1,7 @@
 function AboutSection({ id }) {
   return (
     <>
-      <section id={id} className="w-full flex flex-col items-center pt-12 md:pt-[12rem] px-[1rem] md:px-[2rem]">
+      <section id={id} className="w-full flex flex-col items-center pt-32 md:pt-[12rem] px-[1rem] md:px-[2rem]">
         <div className='flex justify-center mb-[2rem]'>
           <span className='inline-block px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-[0.5rem] border border-gray-200 font-body'>
             About

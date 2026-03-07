@@ -21,7 +21,7 @@ function HeroSection({ id }) {
   return (
     <section 
       id={id} 
-      className='w-full flex flex-col justify-center items-center pt-28 md:pt-48 pb-16 px-4 md:px-8 bg-white overflow-hidden'
+      className='w-full flex flex-col justify-center items-center pt-28 md:pt-48 px-4 md:px-8 bg-white overflow-hidden'
     >
       {/* 1. The Name */}
       <motion.h1 
@@ -82,7 +82,7 @@ function HeroSection({ id }) {
           href="#contact" 
           className='flex items-center gap-1.5 text-blue-600 font-semibold hover:gap-3 transition-all duration-300'
         >
-          Get in touch <MessageCircle size={18} />
+          Get in Touch <MessageCircle size={16} />
         </a>
       </motion.div>
 
