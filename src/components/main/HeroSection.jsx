@@ -12,8 +12,8 @@ function HeroSection({ id }) {
         <h1 className='text-4xl md:text-9xl font-body font-bold text-center mb-4'>
           Martin Manalo
         </h1>
-        <h2 className='text-sm md:text-[1.5rem] font-body font-semibold text-gray-500 text-center mb-8 md:mb-24'>
-          Sophomore, Computer Science <span className="font-normal">at</span> De La Salle University
+        <h2 className='text-sm md:text-[1.5rem] font-mono font-medium text-gray-500 text-center mb-8 md:mb-24'>
+          Software Engineer | UX/UI Designer<br></br>Sophomore CS at De La Salle Univ.
         </h2>
         
         <div className='flex flex-row gap-4 md:gap-4 flex-wrap justify-center'>
@@ -25,9 +25,9 @@ function HeroSection({ id }) {
                 href={link.url}
                 target="_blank" 
                 rel="noreferrer"
-                className='flex items-center justify-center gap-2 px-4 py-3 bg-gray-900 text-white font-body font-semibold rounded-[0.8rem] hover:bg-gray-800 transition-colors duration-200 whitespace-nowrap'
+                className='flex items-center justify-center gap-1.5 px-3 py-2 bg-gray-900 text-white font-body font-semibold rounded-xl hover:bg-gray-800 transition-colors duration-200 whitespace-nowrap'
               >
-                <Icon size={16} strokeWidth={2} />
+                <Icon size={14} strokeWidth={2} />
                 <span className='text-sm md:text-base'>{link.label}</span>
               </a>
             );

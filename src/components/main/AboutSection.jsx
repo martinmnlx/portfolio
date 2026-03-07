@@ -14,7 +14,7 @@ function AboutSection({ id }) {
           <div>
             <img 
               src="../src/assets/images/self.jpg" 
-              className="w-45 h-60 md:w-60 md:h-80 rounded-[1rem] shadow-sm border border-gray-200/50 mx-auto md:mx-0">
+              className="w-full h-45 md:w-60 md:h-80 rounded-2xl shadow-sm border border-gray-200/50 mx-auto md:mx-0">
             </img>
           </div>
           <div className="flex-1">
@@ -29,7 +29,7 @@ function AboutSection({ id }) {
               <span className="text-gray-500 font-semibold mr-1">
                 Fun Fact: 
               </span>
-              I enjoy playing sports (especially basketball).
+              - I enjoy playing sports (especially basketball).
             </p>
           </div>
         </div>
