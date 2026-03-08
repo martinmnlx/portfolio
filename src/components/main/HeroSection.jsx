@@ -78,7 +78,7 @@ function HeroSection({ id }) {
           href='#contact'
           className='
             flex items-center justify-center gap-2 px-4 py-2.5 
-            bg-blue-600 text-white font-body font-semibold rounded-xl 
+            bg-blue-600 text-white font-body font-medium rounded-xl 
             hover:bg-blue-700 transition-all duration-200 whitespace-nowrap
             
             col-span-2 md:col-span-1 md:w-auto
