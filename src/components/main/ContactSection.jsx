@@ -59,7 +59,7 @@ function ContactSection({ id }) {
 
       <motion.h1
         variants={itemVariants}
-        className="font-body text-4xl md:text-6xl font-bold text-slate-100 mb-6 w-full max-w-150 text-center md:text-left"      
+        className="font-body text-4xl md:text-6xl font-bold text-slate-200 mb-6 w-full max-w-150 text-center md:text-left"      
       >
         *Contact Form
       </motion.h1>

@@ -66,7 +66,7 @@ function ProjectsSection({ id }) {
     <section id={id} className="w-full min-h-screen flex flex-col items-center pt-32 md:pt-48 px-4 md:px-8 bg-white">
       {/* Title Header - Now even larger and more minimalist */}
       <div className="w-full max-w-300 mb-12">
-        <h1 className="font-body text-4xl md:text-6xl font-bold text-slate-100 text-center md:text-left">
+        <h1 className="font-body text-4xl md:text-6xl font-bold text-slate-200 text-center md:text-left">
           *Featured Projects
         </h1>
       </div>
