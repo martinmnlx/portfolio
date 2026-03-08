@@ -16,23 +16,64 @@ function AboutSection({ id }) {
     "I like watching Valorant e-sports tournaments, and my favorite teams are Paper Rex and Sentinels."
   ];
 
+  // Animation variants for the whole section entry
+  const containerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.8, 
+        ease: "easeOut",
+        staggerChildren: 0.2 
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
   return (
-    <section id={id} className="w-full flex flex-col items-center pt-32 md:pt-48 px-4 md:px-8 bg-white">
-      {/* Category Badge */}
-      <div className='flex justify-center mb-8'>
+    <motion.section 
+      id={id} 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+      className="w-full flex flex-col items-center pt-32 md:pt-48 px-4 md:px-8 bg-white"
+    >
+      {/* Category Badge
+      <motion.div variants={itemVariants} className='flex justify-center mb-8'>
         <span className='inline-block px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg border border-gray-200 font-body'>
           About
         </span>
-      </div>
+      </motion.div>
+      */}
 
-      <div className="w-full max-w-225 flex flex-col md:flex-row gap-8 p-6 md:p-8 border border-gray-200/50 rounded-3xl bg-white">
-        <div className="shrink-0">
+      <motion.h1
+        variants={itemVariants}
+        className="font-body text-4xl md:text-6xl font-bold text-slate-100 mb-6 w-full max-w-225 text-center md:text-left"      
+      >
+        *About Me
+      </motion.h1>
+
+      <motion.div 
+        variants={itemVariants}
+        className="w-full max-w-225 flex flex-col md:flex-row gap-8 p-6 md:p-8 border border-slate-100 rounded-3xl bg-slate-50"
+      >
+        <motion.div 
+          className="shrink-0"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
           <img 
             src={selfImage}
             alt="Martin Manalo"
-            className="w-60 h-60 md:w-80 md:h-80 rounded-2xl border border-gray-200/50 object-cover mx-auto md:mx-0"
+            className="w-full h-64 md:w-80 md:h-80 rounded-2xl border border-gray-200/50 object-cover mx-auto md:mx-0"
           />
-        </div>
+        </motion.div>
 
         <div className="flex-1">
           <h2 className="font-mono text-xs md:text-sm font-semibold text-slate-400 tracking-widest uppercase">
@@ -45,7 +86,7 @@ function AboutSection({ id }) {
             I'd like to further explore web and mobile development to create apps that make people's lives easier.
           </p>
 
-          <div className="mt pt-6">
+          <div className="mt-6">
             <button 
               onClick={() => setShowFacts(!showFacts)}
               className="flex items-center gap-2 group focus:outline-none cursor-pointer"
@@ -64,25 +105,21 @@ function AboutSection({ id }) {
             <AnimatePresence>
               {showFacts && (
                 <motion.ul
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
-                  variants={{
-                    visible: { transition: { staggerChildren: 0.1 } },
-                    hidden: { transition: { staggerChildren: 0.05, staggerDirection: -1 } }
-                  }}
-                  className="font-body text-sm md:text-base text-slate-600 leading-relaxed mt-4 space-y-3"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="font-body text-sm md:text-base text-slate-600 leading-relaxed mt-4 space-y-3 overflow-hidden"
                 >
                   {funFacts.map((fact, index) => (
                     <motion.li 
                       key={index}
-                      variants={{
-                        visible: { opacity: 1, x: 0 },
-                        hidden: { opacity: 0, x: -10 }
-                      }}
-                      className="flex gap-2"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      className="flex gap-4"
                     >
-                      <span className="text-blue-500">•</span>
+                      <span className="text-slate-400 shrink-0">•</span>
                       {fact}
                     </motion.li>
                   ))}
@@ -91,8 +128,8 @@ function AboutSection({ id }) {
             </AnimatePresence>
           </div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
 
