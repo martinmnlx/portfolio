@@ -48,7 +48,7 @@ function HeroSection({ id }) {
         variants={staggerContainer}
         initial="initial"
         animate="animate"
-        className='flex flex-row gap-3 md:gap-4 flex-wrap justify-center mb-10'
+        className='grid grid-cols-2 md:flex md:flex-row gap-x-3 gap-y-4 md:gap-4 justify-center mb-4 w-67 max-w-md md:max-w-none px-4 md:px-0 mx-auto'
       >
         {links.map((link) => {
           const { Icon } = link;
@@ -61,31 +61,33 @@ function HeroSection({ id }) {
               href={link.url}
               target="_blank" 
               rel="noreferrer"
-              className='flex items-center gap-2 px-4 py-2 bg-slate-50 text-slate-900 font-body font-medium rounded-xl border border-slate-200 hover:bg-slate-100 transition-all duration-200 whitespace-nowrap'
+              className='flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-50 text-slate-900 font-body font-medium rounded-xl border border-slate-200 hover:bg-slate-100 transition-all duration-200 whitespace-nowrap'
             >
               <Icon size={16} strokeWidth={2} />
               <span className='text-sm md:text-base'>{link.label}</span>
             </motion.a>
           );
         })}
-      </motion.div>
-      
-      {/* 4. Professional CTA */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.8 }}
-        className='group flex flex-col md:flex-row items-center gap-2 font-body text-sm md:text-base text-slate-600'
-      >
-        <p>Interested in collaborating on a project?</p>
-        <a 
-          href="#contact" 
-          className='flex items-center gap-1.5 text-blue-600 font-semibold hover:gap-3 transition-all duration-300'
-        >
-          Get in Touch <MessageCircle size={16} />
-        </a>
-      </motion.div>
 
+        {/* The "Primary CTA" Button */}
+        <motion.a
+          key="contact"
+          variants={fadeInUp}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          href='#contact'
+          className='
+            flex items-center justify-center gap-2 px-4 py-2.5 
+            bg-blue-600 text-white font-body font-semibold rounded-xl 
+            hover:bg-blue-700 transition-all duration-200 whitespace-nowrap
+            
+            col-span-2 md:col-span-1 md:w-auto
+          '        
+        >
+          <MessageCircle size={16} strokeWidth={2} />
+          <span className='text-sm md:text-base'>Contact Me</span>
+        </motion.a>
+      </motion.div>
     </section>
   );
 }

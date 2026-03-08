@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 function MainPage() {
   return (
     <>
-      <div className='flex flex-col items-center px-4'>
+      <div className='flex flex-col items-center px-8'>
         <NavBar />
         
         <HeroSection id="hero"/>
