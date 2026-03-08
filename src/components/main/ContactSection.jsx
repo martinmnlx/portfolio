@@ -128,7 +128,7 @@ function ContactSection({ id }) {
             transition={{ duration: 0.2 }}
             type="submit"
             disabled={submitted}
-            className={`w-full px-4 py-4 ${submitted ? 'bg-green-600' : 'bg-blue-600 hover:bg-blue-700'} text-white font-body font-bold rounded-xl transition-colors duration-300 cursor-pointer`}
+            className={`w-full px-4 py-3 ${submitted ? 'bg-green-600' : 'bg-blue-600 hover:bg-blue-700'} text-white font-body font-bold rounded-xl transition-colors duration-300 cursor-pointer`}
           >
             <AnimatePresence mode="wait">
               <motion.span

@@ -65,7 +65,7 @@ function AboutSection({ id }) {
       >
         <motion.div 
           className="shrink-0"
-          whileHover={{ scale: 1.02 }}
+          whileHover={{ scale: 1.01 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
           <img 
