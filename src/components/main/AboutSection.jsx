@@ -61,7 +61,9 @@ function AboutSection({ id }) {
 
       <motion.div 
         variants={itemVariants}
-        className="w-full max-w-225 flex flex-col md:flex-row gap-8 p-6 md:p-8 border border-slate-100 rounded-3xl bg-slate-50"
+        whileHover={{ x: 2 }}
+        transition={{ duration: 0.2 }}
+        className="w-full max-w-225 flex flex-col md:flex-row gap-8 p-6 md:p-8 border border-slate-100 hover:border-slate-200 rounded-3xl bg-slate-50"
       >
         <motion.div 
           className="shrink-0"

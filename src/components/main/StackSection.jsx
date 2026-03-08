@@ -57,9 +57,9 @@ function StackSection({ id }) {
               key={cat.title}
               variants={itemVariants}
               whileHover={{ x: 2 }} // Subtle "nudge" effect on hover
-              className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 hover:border-slate-200"
+              className="p-6 rounded-2xl border border-slate-100 bg-slate-50 hover:border-slate-200"
             >
-              <h2 className="font-mono text-xs md:text-sm font-bold text-slate-400 tracking-widest uppercase mb-4">
+              <h2 className="font-mono text-xs md:text-sm font-semibold text-slate-400 tracking-widest uppercase mb-4">
                 {cat.title}
               </h2>
               
