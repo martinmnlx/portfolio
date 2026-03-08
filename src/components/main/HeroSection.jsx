@@ -56,12 +56,13 @@ function HeroSection({ id }) {
             <motion.a
               key={link.label}
               variants={fadeInUp}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ y: -4 }}
               whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
               href={link.url}
               target="_blank" 
               rel="noreferrer"
-              className='flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-50 text-slate-900 font-body font-medium rounded-xl border border-slate-200 hover:bg-slate-100 transition-all duration-200 whitespace-nowrap'
+              className='flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-50 text-slate-900 font-body font-medium rounded-xl border border-slate-200 hover:bg-slate-100 whitespace-nowrap'
             >
               <Icon size={16} strokeWidth={2} />
               <span className='text-sm md:text-base'>{link.label}</span>
@@ -73,13 +74,14 @@ function HeroSection({ id }) {
         <motion.a
           key="contact"
           variants={fadeInUp}
-          whileHover={{ scale: 1.02 }}
+          whileHover={{ y: -4 }}
           whileTap={{ scale: 0.98 }}
+          transition={{ duration: 0.2 }}
           href='#contact'
           className='
             flex items-center justify-center gap-2 px-4 py-2.5 
             bg-blue-600 text-white font-body font-medium rounded-xl
-            hover:bg-blue-700 transition-all duration-200 whitespace-nowrap
+            hover:bg-blue-700 whitespace-nowrap
             
             col-span-2 md:col-span-1 md:w-auto
           '        

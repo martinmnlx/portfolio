@@ -123,12 +123,12 @@ function ContactSection({ id }) {
           {/* Submit Button with Hover/Tap Motion */}
           <motion.button
             variants={itemVariants}
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ y: -4 }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}
             type="submit"
             disabled={submitted}
-            className={`w-full px-4 py-3 ${submitted ? 'bg-green-600' : 'bg-blue-600 hover:bg-blue-700'} text-white font-body font-bold rounded-xl transition-colors duration-300 cursor-pointer`}
+            className={`w-full px-4 py-3 ${submitted ? 'bg-green-600' : 'bg-blue-600 hover:bg-blue-700'} text-white font-body font-bold rounded-xl cursor-pointer`}
           >
             <AnimatePresence mode="wait">
               <motion.span
@@ -136,7 +136,7 @@ function ContactSection({ id }) {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
               >
                 {submitted ? 'Message Sent! ✓' : 'Send Message'}
               </motion.span>
