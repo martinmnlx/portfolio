@@ -1,5 +1,6 @@
 import { Github, Linkedin, Facebook, ArrowUp } from 'lucide-react';
 import { motion } from 'framer-motion';
+import resumePdf from '../assets/CV_MANALO_CARLMARTIN.pdf';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -68,7 +69,7 @@ function Footer() {
           </div>
 
           <a
-            href="/resume.pdf"
+            href={resumePdf}
             download
             className="px-6 py-2.5 bg-slate-900 text-white font-body font-semibold rounded-xl hover:bg-slate-800 transition-all duration-200 shadow-sm"
           >
