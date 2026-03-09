@@ -2,6 +2,9 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Github, ExternalLink } from 'lucide-react';
 
+import covVideo from '../../assets/videos/crown-of-vengeance.mp4';
+import ebVideo from '../../assets/videos/eventbuddy.mp4';
+
 const projects = [
   {
     title: "Taftics: Establishment Review App (for Taft)",
@@ -17,7 +20,7 @@ const projects = [
     tagline: "GAME DEV",
     description: "A logic-heavy fighting game engine developed in Java. Implemented custom state machines for character moves and a frame-perfect collision system.",
     tech: ["Java", "JSwing"],
-    video: "../../src/assets/videos/crown-of-vengeance.mp4",
+    video: covVideo,
     github: "#",
     live: "#"
   },
@@ -26,7 +29,7 @@ const projects = [
     tagline: "FULL-STACK, DATABASE-FOCUSED",
     description: "A web application designed to streamline event hall reservations. Features include real-time availability, user reviews, and an admin dashboard.",
     tech: ["Java", "JDBC", "MySQL"],
-    video: "../../src/assets/videos/eventbuddy.mp4",
+    video: ebVideo,
     github: "#",
     live: "#"
   }
