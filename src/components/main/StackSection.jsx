@@ -5,7 +5,7 @@ function StackSection({ id }) {
   const techCategories = [
     {
       title: "Frontend Development",
-      skills: ["React", "Tailwind CSS", "Bootstrap", "JavaScript", "HTML5/CSS3"]
+      skills: ["React", "Tailwind CSS", "Bootstrap", "JavaScript", "HTML5/CSS3", "Vite"]
     },
     {
       title: "Backend Development / Database",
