@@ -2,7 +2,7 @@ import { Github, Linkedin, Facebook, ArrowUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 import resumePdf from '../assets/CV_MANALO_CARLMARTIN.pdf';
 
-function Footer() {
+export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -14,81 +14,67 @@ function Footer() {
   const navLinks = [
     { name: 'About', url: '#about' },
     { name: 'Projects', url: '#projects' },
-    { name: 'Contact', url: '#contact' }
+    { name: 'Contact', url: '#contact' },
   ];
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
     <footer className="mt-32 w-full border-t border-slate-100 bg-slate-50">
-      <div className="flex flex-col items-center px-[1rem] md:px-[2rem] py-12 md:py-16 gap-10">
-        
-        {/* Top Section: Navigation and Back to Top */}
-        <div className="w-full max-w-[900px] flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8 font-body text-slate-500 text-sm md:text-base font-medium">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.url}
-                className="hover:text-slate-900 transition-colors duration-200"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
+      <div className="max-w-[900px] mx-auto px-4 md:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
 
-          <motion.button
-            whileHover={{ y: -3 }}
-            onClick={scrollToTop}
-            className="flex items-center gap-2 font-mono text-xs font-bold text-slate-400 tracking-widest uppercase cursor-pointer hover:text-slate-900 transition-colors"
-          >
-            Back to Top <ArrowUp size={14} />
-          </motion.button>
+        {/* Left: Nav links */}
+        <div className="flex items-center gap-5 font-body text-sm font-medium text-slate-400">
+          {navLinks.map((link) => (
+            <a key={link.name} href={link.url} className="hover:text-slate-900 transition-colors duration-200">
+              {link.name}
+            </a>
+          ))}
         </div>
 
-        {/* Middle Section: Socials and CTA */}
-        <div className="w-full max-w-[900px] flex flex-col md:flex-row items-center justify-between gap-8 pt-8 border-t border-slate-100">
-          <div className="flex gap-4">
-            {socialLinks.map((link) => (
-              <motion.a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noreferrer"
-                whileHover={{ y: -4 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
-                className="p-2.5 bg-slate-50 text-slate-600 rounded-xl border border-slate-200 hover:bg-slate-100 hover:text-slate-900"
-                aria-label={link.name}
-              >
-                <link.Icon size={20} strokeWidth={2} />
-              </motion.a>
-            ))}
-          </div>
+        {/* Center: Copyright */}
+        <p className="font-body text-xs text-slate-400 text-center order-last md:order-none">
+          © {currentYear} Martin Manalo
+        </p>
+
+        {/* Right: Socials + Resume + Back to top */}
+        <div className="flex items-center gap-3">
+          {socialLinks.map((link) => (
+            <motion.a
+              key={link.name}
+              href={link.url}
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              className="text-slate-400 hover:text-slate-900 transition-colors duration-200"
+              aria-label={link.name}
+            >
+              <link.Icon size={17} strokeWidth={2} />
+            </motion.a>
+          ))}
+
+          <div className="w-px h-4 bg-slate-200 mx-1" />
 
           <a
             href={resumePdf}
             download
-            className="px-6 py-2.5 bg-slate-900 text-white font-body font-semibold rounded-xl hover:bg-slate-800 transition-all duration-200 shadow-sm"
+            className="px-3 py-1.5 bg-slate-900 text-white font-body text-xs font-semibold rounded-lg hover:bg-slate-700 transition-colors duration-200"
           >
-            Download Resume
+            Resume
           </a>
+
+          <motion.button
+            whileHover={{ y: -3 }}
+            onClick={scrollToTop}
+            className="text-slate-400 hover:text-slate-900 transition-colors duration-200 cursor-pointer"
+            aria-label="Back to top"
+          >
+            <ArrowUp size={16} />
+          </motion.button>
         </div>
 
-        {/* Bottom Section: Copyright */}
-        <div className="flex flex-col items-center gap-2">
-          <p className="font-mono text-[10px] md:text-xs font-bold text-slate-300 tracking-[0.2em] uppercase">
-            Built with React & Tailwind
-          </p>
-          <p className="font-body text-slate-400 text-xs md:text-sm text-center">
-            © {currentYear} Martin Manalo. All rights reserved.
-          </p>
-        </div>
       </div>
     </footer>
   );
 }
-
-export default Footer;
