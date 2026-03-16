@@ -7,11 +7,11 @@ import ProjectsSection from "../components/main/ProjectsSection";
 import ContactSection from "../components/main/ContactSection";
 import Footer from "../components/Footer";
 
-function MainPage() {
+function MainPage({ dark, setDark }) {
   return (
     <>
       <div className='flex flex-col items-center px-4'>
-        <NavBar />
+        <NavBar dark={dark} setDark={setDark} />
         
         <HeroSection id="hero"/>
         <AboutSection id="about"/>
