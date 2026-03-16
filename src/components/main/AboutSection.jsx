@@ -42,19 +42,11 @@ function AboutSection({ id }) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
-      className="w-full flex flex-col items-center pt-32 md:pt-48 px-4 md:px-8 bg-white"
+      className="w-full flex flex-col items-center pt-32 md:pt-48 px-4 md:px-8 bg-white dark:bg-black"
     >
-      {/* Category Badge
-      <motion.div variants={itemVariants} className='flex justify-center mb-8'>
-        <span className='inline-block px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg border border-gray-200 font-body'>
-          About
-        </span>
-      </motion.div>
-      */}
-
       <motion.h1
         variants={itemVariants}
-        className="font-body text-4xl md:text-6xl font-bold text-slate-200 mb-6 w-full max-w-225 text-center md:text-left"      
+        className="font-body text-4xl md:text-6xl font-bold text-slate-200 dark:text-slate-800 mb-6 w-full max-w-225 text-center md:text-left"      
       >
         *About Me
       </motion.h1>
@@ -63,7 +55,7 @@ function AboutSection({ id }) {
         variants={itemVariants}
         whileHover={{ x: 2 }}
         transition={{ duration: 0.2 }}
-        className="w-full max-w-225 flex flex-col md:flex-row gap-8 p-6 md:p-8 border border-slate-100 hover:border-slate-200 rounded-3xl bg-slate-50"
+        className="w-full max-w-225 flex flex-col md:flex-row gap-8 p-6 md:p-8 border border-slate-100 dark:border-slate-900 hover:border-slate-200 dark:hover:border-slate-800 rounded-3xl bg-slate-50 dark:bg-slate-950"
       >
         <motion.div 
           className="shrink-0"
@@ -73,15 +65,15 @@ function AboutSection({ id }) {
           <img 
             src={selfImage}
             alt="Martin Manalo"
-            className="w-full h-64 md:w-80 md:h-80 rounded-2xl border border-gray-200/50 object-cover mx-auto md:mx-0"
+            className="w-full h-64 md:w-80 md:h-80 rounded-2xl object-cover mx-auto md:mx-0"
           />
         </motion.div>
 
         <div className="flex-1">
-          <h2 className="font-mono text-xs md:text-sm font-semibold text-slate-400 tracking-widest uppercase">
+          <h2 className="font-mono text-xs md:text-sm font-semibold text-slate-400 dark:text-slate-600 tracking-widest uppercase">
             Get to know me
           </h2>
-          <p className="font-body text-base md:text-lg text-slate-800 leading-relaxed mt-2">
+          <p className="font-body text-base md:text-lg text-slate-800 dark:text-slate-200 leading-relaxed mt-2">
             Hey, I'm Martin, a sophomore CS student at De La Salle University, based in Taguig City, Metro Manila. 
             I'm passionate about designing elegant and intuitive user interfaces, and building full-stack applications.
             I'm strongly interested in frontend development and UI/UX design, in which I'm eager to dive into more research and projects.
@@ -93,14 +85,14 @@ function AboutSection({ id }) {
               onClick={() => setShowFacts(!showFacts)}
               className="flex items-center gap-2 group focus:outline-none cursor-pointer"
             >
-              <h2 className="font-mono text-xs md:text-sm font-semibold text-slate-400 tracking-widest uppercase group-hover:text-slate-600 transition-colors">
+              <h2 className="font-mono text-xs md:text-sm font-semibold text-slate-400 dark:text-slate-600 tracking-widest uppercase group-hover:text-slate-600 dark:group-hover:text-slate-400 transition-colors">
                 Fun Facts
               </h2>
               <motion.div
                 animate={{ rotate: showFacts ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <ChevronDown size={14} className="text-slate-400 group-hover:text-slate-600" />
+                <ChevronDown size={14} className="text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-400" />
               </motion.div>
             </button>
 
@@ -111,7 +103,7 @@ function AboutSection({ id }) {
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="font-body text-sm md:text-base text-slate-600 leading-relaxed mt-4 space-y-3 overflow-hidden"
+                  className="font-body text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed mt-4 space-y-3 overflow-hidden"
                 >
                   {funFacts.map((fact, index) => (
                     <motion.li 
@@ -121,7 +113,7 @@ function AboutSection({ id }) {
                       transition={{ delay: index * 0.05 }}
                       className="flex gap-4"
                     >
-                      <span className="text-slate-400 shrink-0">•</span>
+                      <span className="text-slate-400 dark:text-slate-600 shrink-0">•</span>
                       {fact}
                     </motion.li>
                   ))}

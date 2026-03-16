@@ -42,11 +42,11 @@ function StackSection({ id }) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
       variants={containerVariants}
-      className="w-full flex flex-col items-center pt-32 md:pt-48 px-4 md:px-8 bg-white"
+      className="w-full flex flex-col items-center pt-32 md:pt-48 px-4 md:px-8 bg-white dark:bg-black"
     >
       <motion.h1 
         variants={itemVariants}
-        className="font-body text-4xl md:text-6xl font-bold text-slate-200 text-center mb-6 text-center md:text-left w-full max-w-200"
+        className="font-body text-4xl md:text-6xl font-bold text-slate-200 dark:text-slate-800 text-center mb-6 text-center md:text-left w-full max-w-200"
       >
         *Tech Stack
       </motion.h1>
@@ -57,9 +57,9 @@ function StackSection({ id }) {
               key={cat.title}
               variants={itemVariants}
               whileHover={{ x: 2 }} // Subtle "nudge" effect on hover
-              className="p-6 rounded-2xl border border-slate-100 bg-slate-50 hover:border-slate-200"
+              className="p-6 rounded-2xl border border-slate-100 dark:border-slate-900 bg-slate-50 dark:bg-slate-950 hover:border-slate-200 dark:hover:border-slate-800"
             >
-              <h2 className="font-mono text-xs md:text-sm font-semibold text-slate-400 tracking-widest uppercase mb-4">
+              <h2 className="font-mono text-xs md:text-sm font-semibold text-slate-400 dark:text-slate-600 tracking-widest uppercase mb-4">
                 {cat.title}
               </h2>
               
@@ -67,7 +67,7 @@ function StackSection({ id }) {
                 {cat.skills.map((skill) => (
                   <span 
                     key={skill} 
-                    className="font-mono px-3 py-1.5 bg-white text-slate-700 text-xs md:text-sm font-medium rounded-xl border border-slate-200 hover:text-blue-600 hover:border-blue-200 transition-colors cursor-default"
+                    className="font-mono px-3 py-1.5 bg-white dark:bg-black text-slate-800 dark:text-slate-200 text-xs md:text-sm font-medium rounded-xl border border-slate-200 dark:border-slate-800 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-200 dark:hover:border-blue-400 transition-colors cursor-default"
                   >
                     {skill}
                   </span>

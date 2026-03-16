@@ -23,3 +23,11 @@
     @apply tracking-tight;
   }
 }
+
+.dark {
+  @layer base {
+    body {
+      background-color: black;
+    }
+  }
+}

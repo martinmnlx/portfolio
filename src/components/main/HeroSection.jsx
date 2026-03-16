@@ -21,12 +21,12 @@ function HeroSection({ id }) {
   return (
     <section 
       id={id} 
-      className='w-full flex flex-col justify-center items-center pt-28 md:pt-48 px-4 md:px-8 bg-white overflow-hidden'
+      className='w-full flex flex-col justify-center items-center pt-28 md:pt-48 px-4 md:px-8 bg-white dark:bg-black overflow-hidden'
     >
       {/* 1. The Name */}
       <motion.h1 
         {...fadeInUp}
-        className='text-7xl md:text-9xl font-body font-bold text-center mb-4 text-slate-800'
+        className='text-7xl md:text-9xl font-body font-bold text-center mb-4 text-slate-800 dark:text-slate-200'
       >
         Martin<br className="md:hidden" /> Manalo
       </motion.h1>
@@ -36,7 +36,7 @@ function HeroSection({ id }) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-        className='text-sm md:text-[1.25rem] font-mono font-medium text-slate-600 text-center mb-8 md:mb-16'
+        className='text-sm md:text-[1.25rem] font-mono font-medium text-slate-600 dark:text-slate-400 text-center mb-8 md:mb-16'
       >
         Software Engineer & UI Designer <br className="md:hidden" />
         <span className="hidden md:inline"> • </span> 
@@ -62,7 +62,7 @@ function HeroSection({ id }) {
               href={link.url}
               target="_blank" 
               rel="noreferrer"
-              className='flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-50 text-slate-900 font-body font-medium rounded-xl border border-slate-200 hover:bg-slate-100 whitespace-nowrap'
+              className='flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-body font-medium rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100  dark:hover:bg-slate-900 whitespace-nowrap'
             >
               <Icon size={16} strokeWidth={2} />
               <span className='text-sm md:text-base'>{link.label}</span>

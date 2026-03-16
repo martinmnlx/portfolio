@@ -20,10 +20,10 @@ function NavBar({ dark, setDark }) {
         <div className="
           flex items-center justify-between 
           h-12 md:h-16 w-full gap-4 px-5 md:pr-2.5
-          border border-slate-200/50 dark:border-slate-700/50 rounded-2xl
-          bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-md z-50
+          border border-slate-200/50 dark:border-slate-800/50 rounded-2xl
+          bg-slate-50/50 dark:bg-slate-950/50 backdrop-blur-md z-50
         ">
-          <a href="#" className="font-mono text-slate-800 dark:text-white md:px-2 font-bold text-lg md:text-xl whitespace-nowrap">
+          <a href="#" className="font-mono text-slate-800 dark:text-slate-200 md:px-2 font-bold text-lg md:text-xl whitespace-nowrap">
             Martin M.
           </a>
 
@@ -35,7 +35,7 @@ function NavBar({ dark, setDark }) {
                 href={item.href} 
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
-                className='font-body font-medium text-slate-600 dark:text-slate-300 px-4 py-2 rounded-lg text-base hover:text-slate-800 dark:hover:text-white hover:underline hover:underline-offset-4'
+                className='font-body font-medium text-slate-600 dark:text-slate-400 px-4 py-2 rounded-lg text-base hover:text-slate-800 dark:hover:text-slate-200 hover:underline hover:underline-offset-4'
               >
                 {item.label}
               </motion.a>
@@ -44,20 +44,23 @@ function NavBar({ dark, setDark }) {
 
           <div className="flex items-center gap-2">
             {/* Dark mode toggle */}
-            <button
+            <motion.a
               onClick={() => setDark(prev => !prev)}
-              className="px-4 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white transition-colors cursor-pointer"
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.2 }}
+              className="px-4 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors cursor-pointer"
               aria-label="Toggle dark mode"
             >
               {dark ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+            </motion.a>
 
-            <button 
+            <motion.a
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white"
+              className="md:hidden text-gray-600 dark:text-slate-400"
+              aria-label="Toggle mobile menu"
             >
               {isOpen ? <Minimize2 size={20} /> : <Menu size={20} />}
-            </button>
+            </motion.a>
           </div>
         </div>
 

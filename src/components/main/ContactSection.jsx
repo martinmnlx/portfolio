@@ -70,22 +70,22 @@ function ContactSection({ id }) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
-      className="w-full pt-32 md:pt-48 pb-16 flex flex-col items-center px-4 md:px-8 bg-white"
+      className="w-full pt-32 md:pt-48 pb-16 flex flex-col items-center px-4 md:px-8 bg-white dark:bg-black"
     >
       <motion.h1
         variants={itemVariants}
-        className="font-body text-4xl md:text-6xl font-bold text-slate-200 mb-6 w-full max-w-150 text-center md:text-left"      
+        className="font-body text-4xl md:text-6xl font-bold text-slate-200 dark:text-slate-800 mb-6 w-full max-w-150 text-center md:text-left"      
       >
         *Contact Form
       </motion.h1>
 
       <motion.div 
         variants={itemVariants}
-        className="w-full max-w-150 p-6 md:p-8 border border-slate-100 rounded-3xl bg-slate-50"
+        className="w-full max-w-150 p-6 md:p-8 border border-slate-100 dark:border-slate-900 rounded-3xl bg-slate-50 dark:bg-slate-950"
       >
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           <motion.div variants={itemVariants}>
-            <label htmlFor="name" className="font-mono text-xs md:text-sm font-semibold text-slate-400 tracking-widest uppercase block mb-2">
+            <label htmlFor="name" className="font-mono text-xs md:text-sm font-semibold text-slate-400 dark:text-slate-600 tracking-widest uppercase block mb-2">
               Name
             </label>
             <input
@@ -96,13 +96,13 @@ function ContactSection({ id }) {
               onChange={handleChange}
               required
               disabled={status === 'loading' || status === 'success'}
-              className="w-full px-4 py-3 border border-slate-200 rounded-xl font-body text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-200 disabled:opacity-50"
+              className="w-full px-4 py-3 border border-slate-200 dark:border-slate-800 rounded-xl font-body text-slate-800 dark:text-slate-200 bg-white dark:bg-black focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-200 disabled:opacity-50"
               placeholder="John Doe"
             />
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <label htmlFor="email" className="font-mono text-xs md:text-sm font-semibold text-slate-400 tracking-widest uppercase block mb-2">
+            <label htmlFor="email" className="font-mono text-xs md:text-sm font-semibold text-slate-400 dark:text-slate-600 tracking-widest uppercase block mb-2">
               Email
             </label>
             <input
@@ -113,13 +113,13 @@ function ContactSection({ id }) {
               onChange={handleChange}
               required
               disabled={status === 'loading' || status === 'success'}
-              className="w-full px-4 py-3 border border-slate-200 rounded-xl font-body text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-200 disabled:opacity-50"
+              className="w-full px-4 py-3 border border-slate-200 dark:border-slate-800 rounded-xl font-body text-slate-800 dark:text-slate-200 bg-white dark:bg-black focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-200 disabled:opacity-50"
               placeholder="john_doe@email.com"
             />
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <label htmlFor="message" className="font-mono text-xs md:text-sm font-semibold text-slate-400 tracking-widest uppercase block mb-2">
+            <label htmlFor="message" className="font-mono text-xs md:text-sm font-semibold text-slate-400 dark:text-slate-600 tracking-widest uppercase block mb-2">
               Message
             </label>
             <textarea
@@ -130,7 +130,7 @@ function ContactSection({ id }) {
               required
               rows="5"
               disabled={status === 'loading' || status === 'success'}
-              className="w-full px-4 py-3 border border-slate-200 rounded-xl font-body text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-200 disabled:opacity-50"
+              className="w-full px-4 py-3 border border-slate-200 dark:border-slate-800 rounded-xl font-body text-slate-800 dark:text-slate-200 bg-white dark:bg-black focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-200 disabled:opacity-50"
               placeholder="Your message here..."
             ></textarea>
           </motion.div>

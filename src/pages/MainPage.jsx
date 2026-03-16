@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 function MainPage({ dark, setDark }) {
   return (
     <>
-      <div className='flex flex-col items-center px-4'>
+      <div className='flex flex-col items-center px-4 bg-white dark:bg-black'>
         <NavBar dark={dark} setDark={setDark} />
         
         <HeroSection id="hero"/>

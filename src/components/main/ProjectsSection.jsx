@@ -69,11 +69,11 @@ function ProjectsSection({ id }) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="w-full flex flex-col items-center pt-32 md:pt-48 px-4 md:px-8 bg-white"
+      className="w-full flex flex-col items-center pt-32 md:pt-48 px-4 md:px-8 bg-white dark:bg-black"
     >
       <motion.h1
         variants={itemVariants}
-        className="font-body text-4xl md:text-6xl font-bold text-slate-200 mb-6 w-full max-w-250 text-center md:text-left"
+        className="font-body text-4xl md:text-6xl font-bold text-slate-200 dark:text-slate-800 mb-6 w-full max-w-250 text-center md:text-left"
       >
         *Featured Projects
       </motion.h1>
@@ -87,12 +87,12 @@ function ProjectsSection({ id }) {
             initial="enter"
             animate="center"
             exit="exit"
-            className="w-full flex flex-col md:flex-row gap-8 p-6 md:p-8 border border-slate-100 rounded-3xl bg-slate-50"
+            className="w-full flex flex-col md:flex-row gap-8 p-6 md:p-8 border border-slate-100 dark:border-slate-900 rounded-3xl bg-slate-50 dark:bg-slate-950"
           >
             {/* LEFT: Video Player */}
             <div className="shrink-0">
               <div 
-                className="relative w-full md:w-120 aspect-4/3 rounded-2xl overflow-hidden bg-slate-200 border border-slate-200/50"
+                className="relative w-full md:w-120 aspect-4/3 rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
@@ -113,19 +113,19 @@ function ProjectsSection({ id }) {
             {/* RIGHT: Text Content */}
             <div className="flex-1 flex flex-col justify-between">
               <div>
-                <h2 className="font-mono text-xs md:text-sm font-semibold text-slate-400 tracking-widest uppercase">
+                <h2 className="font-mono text-xs md:text-sm font-semibold text-slate-400 dark:text-slate-600 tracking-widest uppercase">
                   {projects[index].tagline}
                 </h2>
-                <h3 className="font-body text-2xl md:text-3xl font-bold text-slate-800 mt-2">
+                <h3 className="font-body text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-200 mt-2">
                   {projects[index].title}
                 </h3>
-                <p className="font-body text-base md:text-lg text-slate-600 leading-relaxed mt-4">
+                <p className="font-body text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mt-4">
                   {projects[index].description}
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mt-6">
                   {projects[index].tech.map((tag) => (
-                    <span key={tag} className="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-mono font-medium text-slate-500">
+                    <span key={tag} className="px-3 py-1 bg-white dark:bg-black border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-mono font-medium text-slate-600 dark:text-slate-400">
                       {tag}
                     </span>
                   ))}
@@ -134,12 +134,20 @@ function ProjectsSection({ id }) {
 
               {/* Action Buttons */}
               <div className="flex gap-4 mt-8">
-                <a href={projects[index].github} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white rounded-xl text-sm font-body font-bold hover:bg-slate-800 transition-all">
+                <motion.a 
+                  href={projects[index].github} 
+                  target="_blank" 
+                  rel="noreferrer"
+                  whileHover={{ y: -4 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex items-center gap-2 px-5 py-2.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-black rounded-xl text-sm font-body font-bold hover:bg-slate-800 dark:hover:bg-slate-200"
+                >
                   <Github size={18} /> Code
-                </a>
-                <a href={projects[index].live} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-white border border-slate-200 text-slate-900 rounded-xl text-sm font-body font-bold hover:bg-slate-50 transition-all">
+                </motion.a>
+                <motion.a href={projects[index].live} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-black border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 rounded-xl text-sm font-body font-bold hover:bg-slate-50 dark:hover:bg-slate-950 transition-all">
                   <ExternalLink size={18} /> Demo
-                </a>
+                </motion.a>
               </div>
             </div>
           </motion.div>
@@ -149,13 +157,13 @@ function ProjectsSection({ id }) {
         <div className="flex justify-center md:justify-end gap-3 mt-6">
           <button 
             onClick={() => paginate(-1)}
-            className="p-3 rounded-full border border-slate-200 bg-white text-slate-400 hover:text-slate-900 hover:border-slate-400 transition-all cursor-pointer"
+            className="p-3 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-black text-slate-400 dark:text-slate-600 hover:text-slate-800 dark:hover:text-slate-200 hover:border-slate-400 dark:hover:border-slate-600 transition-all cursor-pointer"
           >
             <ChevronLeft size={20} />
           </button>
           <button 
             onClick={() => paginate(1)}
-            className="p-3 rounded-full border border-slate-200 bg-white text-slate-400 hover:text-slate-900 hover:border-slate-400 transition-all cursor-pointer"
+            className="p-3 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-black text-slate-400 dark:text-slate-600 hover:text-slate-800 dark:hover:text-slate-200 hover:border-slate-400 dark:hover:border-slate-600 transition-all cursor-pointer"
           >
             <ChevronRight size={20} />
           </button>

@@ -19,20 +19,20 @@ export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <footer className="mt-32 w-full border-t border-slate-100 bg-slate-50">
+    <footer className="mt-32 w-full border-t border-slate-100 bg-slate-50 dark:border-slate-900 dark:bg-slate-950">
       <div className="max-w-[900px] mx-auto px-4 md:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
 
         {/* Left: Nav links */}
-        <div className="flex items-center gap-5 font-body text-sm font-medium text-slate-400">
+        <div className="flex items-center gap-5 font-body text-sm font-medium text-slate-400 dark:text-slate-600">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.url} className="hover:text-slate-900 transition-colors duration-200">
+            <a key={link.name} href={link.url} className="hover:text-slate-800 dark:hover:text-slate-200 transition-colors duration-200">
               {link.name}
             </a>
           ))}
         </div>
 
         {/* Center: Copyright */}
-        <p className="font-body text-xs text-slate-400 text-center order-last md:order-none">
+        <p className="font-body text-xs text-slate-400 dark:text-slate-600 text-center order-last md:order-none">
           © {currentYear} Martin Manalo
         </p>
 
@@ -44,29 +44,29 @@ export default function Footer() {
               href={link.url}
               target="_blank"
               rel="noreferrer"
-              whileHover={{ y: -3 }}
+              whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="text-slate-400 hover:text-slate-900 transition-colors duration-200"
+              className="text-slate-400 dark:text-slate-600 hover:text-slate-800 dark:hover:text-slate-200 transition-colors duration-200"
               aria-label={link.name}
             >
               <link.Icon size={17} strokeWidth={2} />
             </motion.a>
           ))}
 
-          <div className="w-px h-4 bg-slate-200 mx-1" />
+          <div className="w-px h-4 bg-slate-200 dark:bg-slate-800 mx-1" />
 
           <a
             href='../../public/RESUME.pdf'
             download
-            className="px-3 py-1.5 bg-slate-900 text-white font-body text-xs font-semibold rounded-lg hover:bg-slate-700 transition-colors duration-200"
+            className="px-3 py-1.5 bg-slate-800 dark:bg-slate-200 text-white dark:text-black font-body text-xs font-semibold rounded-lg hover:bg-slate-600 dark:hover:bg-slate-400 transition-colors duration-200"
           >
             Resume
           </a>
 
           <motion.button
-            whileHover={{ y: -3 }}
+            whileHover={{ y: -2 }}
             onClick={scrollToTop}
-            className="text-slate-400 hover:text-slate-900 transition-colors duration-200 cursor-pointer"
+            className="text-slate-400 dark:text-slate-600 hover:text-slate-800 dark:hover:text-slate-200 transition-colors duration-200 cursor-pointer"
             aria-label="Back to top"
           >
             <ArrowUp size={16} />
