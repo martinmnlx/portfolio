@@ -1,16 +1,8 @@
-import { useState, useEffect } from 'react';
-
 import MainPage from './pages/MainPage';
+import useDarkMode from './hooks/useDarkMode';
 
 function App() {
-  const [dark, setDark] = useState(() => {
-    return localStorage.getItem('theme') === 'dark'
-  });
-  
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', dark);
-    localStorage.setItem('theme', dark ? 'dark' : 'light');
-  }, [dark]);
+  const [dark, setDark] = useDarkMode();
 
   return (
     <>
