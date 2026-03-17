@@ -70,7 +70,7 @@ function ContactSection({ id }) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
-      className="w-full pt-32 md:pt-48 pb-16 flex flex-col items-center px-4 md:px-8 bg-white dark:bg-black"
+      className="w-full pt-32 md:pt-48 pb-32 md:pb-40 flex flex-col items-center px-4 md:px-8 bg-white dark:bg-black"
     >
       <motion.h1
         variants={itemVariants}

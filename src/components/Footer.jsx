@@ -19,7 +19,7 @@ export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <footer className="mt-32 w-full border-t border-slate-100 bg-slate-50 dark:border-slate-900 dark:bg-slate-950">
+    <footer className="w-full border-t border-slate-100 bg-slate-50 dark:border-slate-900 dark:bg-slate-950">
       <div className="max-w-[900px] mx-auto px-4 md:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
 
         {/* Left: Nav links */}
