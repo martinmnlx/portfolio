@@ -14,7 +14,7 @@ function NavBar({ dark, setDark }) {
 
   return (
     <nav className="sticky top-4 md:top-8 z-50 flex justify-center w-full px-4">
-      <div className="relative flex flex-col items-center w-full max-w-fit md:min-w-[400px]">
+      <div className="relative flex flex-col items-center w-full max-w-fit md:min-w-100">
         
         {/* Main Bar */}
         <div className="

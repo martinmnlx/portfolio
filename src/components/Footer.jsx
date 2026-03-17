@@ -20,7 +20,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full border-t border-slate-100 bg-slate-50 dark:border-slate-900 dark:bg-slate-950">
-      <div className="max-w-[900px] mx-auto px-4 md:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="max-w-225 mx-auto px-4 md:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
 
         {/* Left: Nav links */}
         <div className="flex items-center gap-5 font-body text-sm font-medium text-slate-400 dark:text-slate-600">
@@ -32,7 +32,7 @@ export default function Footer() {
         </div>
 
         {/* Center: Copyright */}
-        <p className="font-body text-xs text-slate-400 dark:text-slate-600 text-center order-last md:order-none">
+        <p className="font-body text-xs text-slate-400 dark:text-slate-600 text-center order-last md:order-0">
           © {currentYear} Martin Manalo
         </p>
 
