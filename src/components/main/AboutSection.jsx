@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
-import selfImage from '../../assets/images/self.jpg';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import selfImage from "../../assets/images/self.jpg";
 
 function AboutSection({ id }) {
   const [showFacts, setShowFacts] = useState(false);
@@ -13,31 +13,31 @@ function AboutSection({ id }) {
     "I used to do NBA content and graphic design on Instagram back in highschool.",
     "I love watching comic book movies and shows, especially the Marvel Cinematic Universe.",
     "I play different genres of video games, but here are some of my recents: NBA 2K26, Spider-Man 2, Valorant, R.E.P.O, Peak, Schedule I, Roblox.",
-    "I like watching Valorant e-sports tournaments, and my favorite teams are Paper Rex and Sentinels."
+    "I like watching Valorant e-sports tournaments, and my favorite teams are Paper Rex and Sentinels.",
   ];
 
   // Animation variants for the whole section entry
   const containerVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
-        duration: 0.8, 
+      transition: {
+        duration: 0.8,
         ease: "easeOut",
-        staggerChildren: 0.2 
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   return (
-    <motion.section 
-      id={id} 
+    <motion.section
+      id={id}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -46,26 +46,27 @@ function AboutSection({ id }) {
     >
       <motion.h1
         variants={itemVariants}
-        className="font-body text-4xl md:text-6xl font-bold text-slate-200 dark:text-slate-800 mb-6 w-full max-w-225 text-center md:text-left"      
+        className="font-body text-4xl md:text-6xl font-bold text-slate-200 dark:text-slate-800 mb-6 w-full max-w-225 text-center md:text-left"
       >
         *About Me
       </motion.h1>
 
-      <motion.div 
+      <motion.div
         variants={itemVariants}
         whileHover={{ x: 2 }}
         transition={{ duration: 0.2 }}
         className="w-full max-w-225 flex flex-col md:flex-row gap-8 p-6 md:p-8 border border-slate-100 dark:border-slate-900 hover:border-slate-200 dark:hover:border-slate-800 rounded-3xl bg-slate-50 dark:bg-slate-950"
       >
-        <motion.div 
+        <motion.div
           className="shrink-0"
           whileHover={{ y: -4 }}
           transition={{ duration: 0.2 }}
         >
-          <img 
+          <img
             src={selfImage}
             alt="Martin Manalo"
             className="w-full h-64 md:w-80 md:h-80 rounded-2xl object-cover mx-auto md:mx-0"
+            loading="lazy"
           />
         </motion.div>
 
@@ -74,14 +75,17 @@ function AboutSection({ id }) {
             Get to know me
           </h2>
           <p className="font-body text-base md:text-lg text-slate-800 dark:text-slate-200 leading-relaxed mt-2">
-            Hey, I'm Martin, a sophomore CS student at De La Salle University, based in Taguig City, Metro Manila. 
-            I'm passionate about designing elegant and intuitive user interfaces, and building full-stack applications.
-            I'm strongly interested in frontend development and UI/UX design, in which I'm eager to dive into more research and projects.
-            I'd like to further explore web and mobile development to create apps that make people's lives easier.
+            Hey, I'm Martin, a sophomore CS student at De La Salle University,
+            based in Taguig City, Metro Manila. I'm passionate about designing
+            elegant and intuitive user interfaces, and building full-stack
+            applications. I'm strongly interested in frontend development and
+            UI/UX design, in which I'm eager to dive into more research and
+            projects. I'd like to further explore web and mobile development to
+            create apps that make people's lives easier.
           </p>
 
           <div className="mt-6">
-            <button 
+            <button
               onClick={() => setShowFacts(!showFacts)}
               className="flex items-center gap-2 group focus:outline-none cursor-pointer"
             >
@@ -92,7 +96,10 @@ function AboutSection({ id }) {
                 animate={{ rotate: showFacts ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <ChevronDown size={14} className="text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-400" />
+                <ChevronDown
+                  size={14}
+                  className="text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-400"
+                />
               </motion.div>
             </button>
 
@@ -106,14 +113,16 @@ function AboutSection({ id }) {
                   className="font-body text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed mt-4 space-y-3 overflow-hidden"
                 >
                   {funFacts.map((fact, index) => (
-                    <motion.li 
+                    <motion.li
                       key={index}
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 }}
                       className="flex gap-4"
                     >
-                      <span className="text-slate-400 dark:text-slate-600 shrink-0">•</span>
+                      <span className="text-slate-400 dark:text-slate-600 shrink-0">
+                        •
+                      </span>
                       {fact}
                     </motion.li>
                   ))}
