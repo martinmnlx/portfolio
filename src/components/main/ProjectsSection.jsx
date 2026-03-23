@@ -7,10 +7,10 @@ import ebVideo from "../../assets/videos/eventbuddy.mp4";
 
 const projects = [
   {
-    title: "Taftics: Establishment Review App (for Taft)",
-    tagline: "FULL-STACK",
+    title: "Taftics: Establishment Review App",
+    tagline: "FULL-STACK - CCAPDEV",
     description:
-      "A collaborative platform built for DLSU students to crowdsource and verify establishment ratings. Features a real-time voting system and location-based filtering.",
+      "A full-stack web application built for DLSU students, using the MERN stack. Users may browse through establishments around Taft, read peer reviews and ratings, and contribute their own feedback.",
     tech: ["React", "Bootstrap", "MongoDB", "Node.js", "Express.js"],
     video: "/videos/taftics-demo.mp4",
     github: "https://github.com/Gabiesaur/CCAPDEV-MCO",
@@ -18,9 +18,9 @@ const projects = [
   },
   {
     title: "Crown of Vengeance: Turn-Based Fighting Game",
-    tagline: "GAME DEV",
+    tagline: "GAME DEV - CCPROG3",
     description:
-      "A logic-heavy fighting game engine developed in Java. Implemented custom state machines for character moves and a frame-perfect collision system.",
+      "A medieval themed turn-based fighting game built in Java and JSwing. Introduced the MVC architecture. Features dynamic player stats via equipped items and the environment, and simple enemy behavior.",
     tech: ["Java", "JSwing"],
     video: covVideo,
     github: "https://github.com/martinmnlx/crown-of-vengeance",
@@ -28,10 +28,10 @@ const projects = [
   },
   {
     title: "EventBuddy: Event Hall Reservation System",
-    tagline: "FULL-STACK",
+    tagline: "FULL-STACK - CCINFOM",
     description:
-      "A web application designed to streamline event hall reservations. Features include real-time availability, user reviews, and an admin dashboard.",
-    tech: ["Java", "MySQL"],
+      "A desktop application for reserving event halls backed by MySQL. Users may browse halls, make reservations, and manage bookings. Includes admin CRUD record management and report generation.",
+    tech: ["Java", "MySQL", "JSwing"],
     video: ebVideo,
     github: "https://github.com/martinmnlx/eventbuddy",
     live: "#",
