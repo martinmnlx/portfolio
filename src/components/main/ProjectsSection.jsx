@@ -154,15 +154,18 @@ function ProjectsSection({ id }) {
                   whileHover={{ y: -4 }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.2 }}
-                  className="flex items-center gap-2 px-5 py-2.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-black rounded-xl text-sm font-body font-bold hover:bg-slate-800 dark:hover:bg-slate-200"
+                  className="flex items-center gap-2 px-4 py-2.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-black rounded-xl text-sm font-body font-semibold hover:bg-slate-800 dark:hover:bg-slate-200"
                 >
-                  <Github size={18} /> Code
+                  <Github size={18} /> GitHub Repo
                 </motion.a>
                 <motion.a
                   href={projects[index].live}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-black border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 rounded-xl text-sm font-body font-bold hover:bg-slate-50 dark:hover:bg-slate-950 transition-all"
+                  whileHover={{ y: -4 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-black border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 rounded-xl text-sm font-body font-semibold hover:bg-slate-50 dark:hover:bg-slate-950 transition-all"
                 >
                   <ExternalLink size={18} /> Demo
                 </motion.a>
