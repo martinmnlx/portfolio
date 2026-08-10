@@ -1,42 +1,50 @@
-import { Github, Linkedin, Facebook, ArrowUp } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Github, Linkedin, Facebook, ArrowUp } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/martinmnlx', Icon: Github },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/martin-d-manalo/', Icon: Linkedin },
-    { name: 'Facebook', url: 'https://www.facebook.com/martinmnlx', Icon: Facebook },
+    { name: "GitHub", url: "https://github.com/martinmnlx", Icon: Github },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/martin-d-manalo/",
+      Icon: Linkedin,
+    },
+    {
+      name: "Facebook",
+      url: "https://www.facebook.com/martinmnlx",
+      Icon: Facebook,
+    },
   ];
 
   const navLinks = [
-    { name: 'About', url: '#about' },
-    { name: 'Projects', url: '#projects' },
-    { name: 'Contact', url: '#contact' },
+    { name: "About", url: "#about" },
+    { name: "Projects", url: "#projects" },
+    { name: "Contact", url: "#contact" },
   ];
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <footer className="w-full border-t border-slate-100 bg-slate-50 dark:border-slate-900 dark:bg-slate-950">
       <div className="max-w-225 mx-auto px-4 md:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-
-        {/* Left: Nav links */}
         <div className="flex items-center gap-5 font-body text-sm font-medium text-slate-400 dark:text-slate-600">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.url} className="hover:text-slate-800 dark:hover:text-slate-200 transition-colors duration-200">
+            <a
+              key={link.name}
+              href={link.url}
+              className="hover:text-slate-800 dark:hover:text-slate-200 transition-colors duration-200"
+            >
               {link.name}
             </a>
           ))}
         </div>
 
-        {/* Center: Copyright */}
         <p className="font-body text-xs text-slate-400 dark:text-slate-600 text-center order-last md:order-0">
           © {currentYear} Martin Manalo
         </p>
 
-        {/* Right: Socials + Resume + Back to top */}
         <div className="flex items-center gap-3">
           {socialLinks.map((link) => (
             <motion.a
@@ -56,7 +64,7 @@ export default function Footer() {
           <div className="w-px h-4 bg-slate-200 dark:bg-slate-800 mx-1" />
 
           <a
-            href='../../public/RESUME.pdf'
+            href="../../public/RESUME.pdf"
             download
             className="px-3 py-1.5 bg-slate-800 dark:bg-slate-200 text-white dark:text-black font-body text-xs font-semibold rounded-lg hover:bg-slate-600 dark:hover:bg-slate-400 transition-colors duration-200"
           >
@@ -64,6 +72,7 @@ export default function Footer() {
           </a>
 
           <motion.button
+            type="button"
             whileHover={{ y: -2 }}
             onClick={scrollToTop}
             className="text-slate-400 dark:text-slate-600 hover:text-slate-800 dark:hover:text-slate-200 transition-colors duration-200 cursor-pointer"
@@ -72,7 +81,6 @@ export default function Footer() {
             <ArrowUp size={16} />
           </motion.button>
         </div>
-
       </div>
     </footer>
   );

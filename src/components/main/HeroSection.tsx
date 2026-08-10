@@ -1,7 +1,11 @@
 import { Github, Linkedin, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
-function HeroSection({ id }) {
+type HeroSectionProps = {
+  id: string;
+};
+
+function HeroSection({ id }: HeroSectionProps) {
   const links = [
     { label: "GitHub", url: "https://github.com/martinmnlx", Icon: Github },
     {
@@ -11,7 +15,6 @@ function HeroSection({ id }) {
     },
   ];
 
-  // Animation Variants for a clean staggered entry
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -27,7 +30,6 @@ function HeroSection({ id }) {
       id={id}
       className="w-full flex flex-col justify-center items-center pt-28 md:pt-48 px-4 md:px-8 bg-white dark:bg-black overflow-hidden"
     >
-      {/* 1. The Name */}
       <motion.h1
         {...fadeInUp}
         className="text-7xl md:text-9xl font-body font-bold text-center mb-4 text-slate-800 dark:text-slate-200"
@@ -36,7 +38,6 @@ function HeroSection({ id }) {
         <br className="md:hidden" /> Manalo
       </motion.h1>
 
-      {/* 2. Role & University */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -48,7 +49,6 @@ function HeroSection({ id }) {
         Computer Science @ De La Salle University
       </motion.h2>
 
-      {/* 3. Social Links with stagger */}
       <motion.div
         variants={staggerContainer}
         initial="initial"
@@ -75,7 +75,6 @@ function HeroSection({ id }) {
           );
         })}
 
-        {/* The "Primary CTA" Button */}
         <motion.a
           key="contact"
           variants={fadeInUp}

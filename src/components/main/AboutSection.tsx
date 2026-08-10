@@ -1,22 +1,25 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
-import selfImage from "../../assets/images/self.jpg";
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
+import selfImage from '../../assets/images/self.jpg'
 
-function AboutSection({ id }) {
-  const [showFacts, setShowFacts] = useState(false);
+type AboutSectionProps = {
+  id: string
+}
+
+function AboutSection({ id }: AboutSectionProps) {
+  const [showFacts, setShowFacts] = useState(false)
 
   const funFacts = [
-    "I enjoy playing basketball and going to the gym.",
-    "I like watching sports (NBA, UAAP/NCAA) and diving into the numbers behind the game.",
-    "I have twos dogs - Dixie (Lhaso Apso-Maltese, 1 y/o) and Chippy (Shih Tzu-Jack Russell, 10 y/o).",
-    "I used to do NBA content and graphic design on Instagram back in highschool.",
-    "I love watching comic book movies and shows, especially the Marvel Cinematic Universe.",
-    "I play different genres of video games, but here are some of my recents: NBA 2K26, Spider-Man 2, Valorant, R.E.P.O, Peak, Schedule I, Roblox.",
-    "I like watching Valorant e-sports tournaments, and my favorite teams are Paper Rex and Sentinels.",
-  ];
+    'I enjoy playing basketball and going to the gym.',
+    'I like watching sports (NBA, UAAP/NCAA) and diving into the numbers behind the game.',
+    'I have twos dogs - Dixie (Lhaso Apso-Maltese, 1 y/o) and Chippy (Shih Tzu-Jack Russell, 10 y/o).',
+    'I used to do NBA content and graphic design on Instagram back in highschool.',
+    'I love watching comic book movies and shows, especially the Marvel Cinematic Universe.',
+    'I play different genres of video games, but here are some of my recents: NBA 2K26, Spider-Man 2, Valorant, R.E.P.O, Peak, Schedule I, Roblox.',
+    'I like watching Valorant e-sports tournaments, and my favorite teams are Paper Rex and Sentinels.',
+  ]
 
-  // Animation variants for the whole section entry
   const containerVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -24,16 +27,16 @@ function AboutSection({ id }) {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: 'easeOut',
         staggerChildren: 0.2,
       },
     },
-  };
+  }
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
+  }
 
   return (
     <motion.section
@@ -86,6 +89,7 @@ function AboutSection({ id }) {
 
           <div className="mt-6">
             <button
+              type="button"
               onClick={() => setShowFacts(!showFacts)}
               className="flex items-center gap-2 group focus:outline-none cursor-pointer"
             >
@@ -107,9 +111,9 @@ function AboutSection({ id }) {
               {showFacts && (
                 <motion.ul
                   initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
+                  animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  transition={{ duration: 0.4, ease: 'easeInOut' }}
                   className="font-body text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed mt-4 space-y-3 overflow-hidden"
                 >
                   {funFacts.map((fact, index) => (
@@ -133,7 +137,7 @@ function AboutSection({ id }) {
         </div>
       </motion.div>
     </motion.section>
-  );
+  )
 }
 
-export default AboutSection;
+export default AboutSection

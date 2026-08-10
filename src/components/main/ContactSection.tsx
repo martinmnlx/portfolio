@@ -1,26 +1,38 @@
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-function ContactSection({ id }) {
-  const [formData, setFormData] = useState({
+type ContactSectionProps = {
+  id: string;
+};
+
+type ContactFormData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+type ContactStatus = "idle" | "loading" | "success" | "error";
+
+function ContactSection({ id }: ContactSectionProps) {
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     message: "",
   });
 
-  // Updated to track 'idle', 'loading', 'success', or 'error'
-  const [status, setStatus] = useState("idle");
+  const [status, setStatus] = useState<ContactStatus>("idle");
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
 
-    // Prepare data for the API
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
@@ -33,13 +45,12 @@ function ContactSection({ id }) {
       }),
     });
 
-    const result = await response.json();
+    const result: { success?: boolean } = await response.json();
 
     if (result.success) {
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
 
-      // Return to idle after 5 seconds to allow for new messages
       setTimeout(() => setStatus("idle"), 5000);
     } else {
       console.error("Submission failed", result);
@@ -48,7 +59,6 @@ function ContactSection({ id }) {
     }
   };
 
-  // Animation Variants (Exact same as your provided code)
   const containerVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -141,11 +151,11 @@ function ContactSection({ id }) {
               value={formData.message}
               onChange={handleChange}
               required
-              rows="5"
+              rows={5}
               disabled={status === "loading" || status === "success"}
               className="w-full px-4 py-3 border border-slate-200 dark:border-slate-800 rounded-xl font-body text-slate-800 dark:text-slate-200 bg-white dark:bg-black focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-200 disabled:opacity-50"
               placeholder="Your message here..."
-            ></textarea>
+            />
           </motion.div>
 
           <motion.button

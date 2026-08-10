@@ -1,41 +1,48 @@
-import { useState } from 'react';
-import { Menu, Minimize2, Sun, Moon } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, type Dispatch, type SetStateAction } from "react";
+import { Menu, Minimize2, Sun, Moon } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
-function NavBar({ dark, setDark }) {
+type NavBarProps = {
+  dark: boolean;
+  setDark: Dispatch<SetStateAction<boolean>>;
+};
+
+function NavBar({ dark, setDark }: NavBarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: 'About', href: '#about' },
-    { label: 'Stack', href: '#stack' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' },
+    { label: "About", href: "#about" },
+    { label: "Stack", href: "#stack" },
+    { label: "Projects", href: "#projects" },
+    { label: "Contact", href: "#contact" },
   ];
 
   return (
     <nav className="sticky top-4 md:top-8 z-50 flex justify-center w-full px-4">
       <div className="relative flex flex-col items-center w-full max-w-fit md:min-w-100">
-        
-        {/* Main Bar */}
-        <div className="
+        <div
+          className="
           flex items-center justify-between 
           h-12 md:h-16 w-full gap-4 px-5 md:pr-2.5
           border border-slate-200/50 dark:border-slate-800/50 rounded-2xl
           bg-slate-50/50 dark:bg-slate-950/50 backdrop-blur-md z-50
-        ">
-          <a href="#" className="font-mono text-slate-800 dark:text-slate-200 md:px-2 font-bold text-lg md:text-xl whitespace-nowrap">
+        "
+        >
+          <a
+            href="#"
+            className="font-mono text-slate-800 dark:text-slate-200 md:px-2 font-bold text-lg md:text-xl whitespace-nowrap"
+          >
             Martin M.
           </a>
 
-          {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
-              <motion.a 
+              <motion.a
                 key={item.href}
-                href={item.href} 
+                href={item.href}
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
-                className='font-body font-medium text-slate-600 dark:text-slate-400 px-4 py-2 rounded-lg text-base hover:text-slate-800 dark:hover:text-slate-200 hover:underline hover:underline-offset-4'
+                className="font-body font-medium text-slate-600 dark:text-slate-400 px-4 py-2 rounded-lg text-base hover:text-slate-800 dark:hover:text-slate-200 hover:underline hover:underline-offset-4"
               >
                 {item.label}
               </motion.a>
@@ -43,28 +50,28 @@ function NavBar({ dark, setDark }) {
           </div>
 
           <div className="flex items-center gap-2">
-            {/* Dark mode toggle */}
-            <motion.a
-              onClick={() => setDark(prev => !prev)}
+            <motion.button
+              type="button"
+              onClick={() => setDark((prev) => !prev)}
               whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
               className="px-4 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors cursor-pointer"
               aria-label="Toggle dark mode"
             >
               {dark ? <Sun size={20} /> : <Moon size={20} />}
-            </motion.a>
+            </motion.button>
 
-            <motion.a
+            <motion.button
+              type="button"
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden text-gray-600 dark:text-slate-400"
               aria-label="Toggle mobile menu"
             >
               {isOpen ? <Minimize2 size={20} /> : <Menu size={20} />}
-            </motion.a>
+            </motion.button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -80,9 +87,9 @@ function NavBar({ dark, setDark }) {
               "
             >
               {navItems.map((item) => (
-                <a 
+                <a
                   key={item.href}
-                  href={item.href} 
+                  href={item.href}
                   onClick={() => setIsOpen(false)}
                   className="
                     font-body font-medium text-gray-600 dark:text-slate-300

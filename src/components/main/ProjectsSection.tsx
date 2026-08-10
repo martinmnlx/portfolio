@@ -1,77 +1,81 @@
-import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Github, ExternalLink } from "lucide-react";
+import { useState, useRef, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ChevronLeft, ChevronRight, Github, ExternalLink } from 'lucide-react'
 
-import covVideo from "../../assets/videos/crown-of-vengeance.mp4";
-import ebVideo from "../../assets/videos/eventbuddy.mp4";
+import covVideo from '../../assets/videos/crown-of-vengeance.mp4'
+import ebVideo from '../../assets/videos/eventbuddy.mp4'
+
+type ProjectsSectionProps = {
+  id: string
+}
 
 const projects = [
   {
-    title: "Taftics: Establishment Review App",
-    tagline: "FULL-STACK - CCAPDEV",
+    title: 'Taftics: Establishment Review App',
+    tagline: 'FULL-STACK - CCAPDEV',
     description:
-      "A full-stack web application built for DLSU students, using the MERN stack. Users may browse through establishments around Taft, read peer reviews and ratings, and contribute their own feedback.",
-    tech: ["React", "Bootstrap", "MongoDB", "Node.js", "Express.js"],
-    video: "/videos/taftics-demo.mp4",
-    github: "https://github.com/Gabiesaur/CCAPDEV-MCO",
-    live: "#",
+      'A full-stack web application built for DLSU students, using the MERN stack. Users may browse through establishments around Taft, read peer reviews and ratings, and contribute their own feedback.',
+    tech: ['React', 'Bootstrap', 'MongoDB', 'Node.js', 'Express.js'],
+    video: '/videos/taftics-demo.mp4',
+    github: 'https://github.com/Gabiesaur/CCAPDEV-MCO',
+    live: '#',
   },
   {
-    title: "Crown of Vengeance: Turn-Based Fighting Game",
-    tagline: "GAME DEV - CCPROG3",
+    title: 'Crown of Vengeance: Turn-Based Fighting Game',
+    tagline: 'GAME DEV - CCPROG3',
     description:
-      "A medieval themed turn-based fighting game built in Java and JSwing. Introduced the MVC architecture. Features dynamic player stats via equipped items and the environment, and simple enemy behavior.",
-    tech: ["Java", "JSwing"],
+      'A medieval themed turn-based fighting game built in Java and JSwing. Introduced the MVC architecture. Features dynamic player stats via equipped items and the environment, and simple enemy behavior.',
+    tech: ['Java', 'JSwing'],
     video: covVideo,
-    github: "https://github.com/martinmnlx/crown-of-vengeance",
-    live: "#",
+    github: 'https://github.com/martinmnlx/crown-of-vengeance',
+    live: '#',
   },
   {
-    title: "EventBuddy: Event Hall Reservation System",
-    tagline: "FULL-STACK - CCINFOM",
+    title: 'EventBuddy: Event Hall Reservation System',
+    tagline: 'FULL-STACK - CCINFOM',
     description:
-      "A desktop application for reserving event halls backed by MySQL. Users may browse halls, make reservations, and manage bookings. Includes admin CRUD record management and report generation.",
-    tech: ["Java", "MySQL", "JSwing"],
+      'A desktop application for reserving event halls backed by MySQL. Users may browse halls, make reservations, and manage bookings. Includes admin CRUD record management and report generation.',
+    tech: ['Java', 'MySQL', 'JSwing'],
     video: ebVideo,
-    github: "https://github.com/martinmnlx/eventbuddy",
-    live: "#",
+    github: 'https://github.com/martinmnlx/eventbuddy',
+    live: '#',
   },
-];
+]
 
-function ProjectsSection({ id }) {
-  const [index, setIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const [direction, setDirection] = useState(0);
-  const videoRef = useRef(null);
+function ProjectsSection({ id }: ProjectsSectionProps) {
+  const [index, setIndex] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+  const [direction, setDirection] = useState(0)
+  const videoRef = useRef<HTMLVideoElement | null>(null)
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 2.0;
+      videoRef.current.playbackRate = 2.0
     }
-  }, [index]);
+  }, [index])
 
-  const paginate = (newDirection) => {
-    setDirection(newDirection);
+  const paginate = (newDirection: number) => {
+    setDirection(newDirection)
     setIndex(
       (prevIndex) =>
         (prevIndex + newDirection + projects.length) % projects.length,
-    );
-  };
+    )
+  }
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
+  }
 
   const slideVariants = {
-    enter: (direction) => ({ x: direction > 0 ? 30 : -30, opacity: 0 }),
+    enter: (slideDirection: number) => ({ x: slideDirection > 0 ? 30 : -30, opacity: 0 }),
     center: { x: 0, opacity: 1, transition: { duration: 0.4 } },
-    exit: (direction) => ({
-      x: direction < 0 ? 30 : -30,
+    exit: (slideDirection: number) => ({
+      x: slideDirection < 0 ? 30 : -30,
       opacity: 0,
       transition: { duration: 0.3 },
     }),
-  };
+  }
 
   return (
     <motion.section
@@ -99,7 +103,6 @@ function ProjectsSection({ id }) {
             exit="exit"
             className="w-full flex flex-col md:flex-row gap-8 p-6 md:p-8 border border-slate-100 dark:border-slate-900 rounded-3xl bg-slate-50 dark:bg-slate-950"
           >
-            {/* LEFT: Video Player */}
             <div className="shrink-0">
               <div
                 className="relative w-full md:w-120 aspect-4/3 rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800"
@@ -120,7 +123,6 @@ function ProjectsSection({ id }) {
               </div>
             </div>
 
-            {/* RIGHT: Text Content */}
             <div className="flex-1 flex flex-col justify-between">
               <div>
                 <h2 className="font-mono text-xs md:text-sm font-semibold text-slate-400 dark:text-slate-600 tracking-widest uppercase">
@@ -145,7 +147,6 @@ function ProjectsSection({ id }) {
                 </div>
               </div>
 
-              {/* Action Buttons */}
               <div className="flex gap-4 mt-8">
                 <motion.a
                   href={projects[index].github}
@@ -174,15 +175,16 @@ function ProjectsSection({ id }) {
           </motion.div>
         </AnimatePresence>
 
-        {/* Carousel Controls */}
         <div className="flex justify-center md:justify-end gap-3 mt-6">
           <button
+            type="button"
             onClick={() => paginate(-1)}
             className="p-3 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-black text-slate-400 dark:text-slate-600 hover:text-slate-800 dark:hover:text-slate-200 hover:border-slate-400 dark:hover:border-slate-600 transition-all cursor-pointer"
           >
             <ChevronLeft size={20} />
           </button>
           <button
+            type="button"
             onClick={() => paginate(1)}
             className="p-3 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-black text-slate-400 dark:text-slate-600 hover:text-slate-800 dark:hover:text-slate-200 hover:border-slate-400 dark:hover:border-slate-600 transition-all cursor-pointer"
           >
@@ -191,7 +193,7 @@ function ProjectsSection({ id }) {
         </div>
       </div>
     </motion.section>
-  );
+  )
 }
 
-export default ProjectsSection;
+export default ProjectsSection

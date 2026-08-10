@@ -1,38 +1,42 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
+
+type StackSectionProps = {
+  id: string
+}
 
 const techCategories = [
   {
-    title: "Frontend",
+    title: 'Frontend',
     skills: [
-      "React",
-      "Tailwind CSS",
-      "Bootstrap",
-      "JavaScript",
-      "HTML5/CSS3",
-      "Vite",
+      'React',
+      'Tailwind CSS',
+      'Bootstrap',
+      'JavaScript',
+      'HTML5/CSS3',
+      'Vite',
     ],
   },
   {
-    title: "Backend",
-    skills: ["Node.js", "Express.js", "Python", "Java", "C", "C++"],
+    title: 'Backend',
+    skills: ['Node.js', 'Express.js', 'Python', 'Java', 'C', 'C++'],
   },
   {
-    title: "Database",
-    skills: ["Supabase", "MongoDB", "MySQL"],
+    title: 'Database',
+    skills: ['Supabase', 'MongoDB', 'MySQL'],
   },
   {
-    title: "Tools",
+    title: 'Tools',
     skills: [
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Intellij IDEA",
-      "Arduino IDE",
-      "Figma",
-      "Vercel",
+      'Git',
+      'GitHub',
+      'VS Code',
+      'Intellij IDEA',
+      'Arduino IDE',
+      'Figma',
+      'Vercel',
     ],
   },
-];
+]
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -44,14 +48,14 @@ const containerVariants = {
       staggerChildren: 0.15,
     },
   },
-};
+}
 
 const itemVariants = {
   hidden: { opacity: 0, y: 15 },
   visible: { opacity: 1, y: 0 },
-};
+}
 
-function StackSection({ id }) {
+function StackSection({ id }: StackSectionProps) {
   return (
     <motion.section
       id={id}
@@ -69,7 +73,7 @@ function StackSection({ id }) {
       </motion.h1>
       <div className="w-full max-w-200">
         <div className="flex flex-col gap-6">
-          {techCategories.map((cat, index) => (
+          {techCategories.map((cat) => (
             <motion.div
               key={cat.title}
               variants={itemVariants}
@@ -95,7 +99,7 @@ function StackSection({ id }) {
         </div>
       </div>
     </motion.section>
-  );
+  )
 }
 
-export default StackSection;
+export default StackSection
