@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 type ContactSectionProps = {
   id: string;
@@ -59,7 +59,7 @@ function ContactSection({ id }: ContactSectionProps) {
     }
   };
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -72,7 +72,7 @@ function ContactSection({ id }: ContactSectionProps) {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
@@ -113,7 +113,7 @@ function ContactSection({ id }: ContactSectionProps) {
               onChange={handleChange}
               required
               disabled={status === "loading" || status === "success"}
-              className="w-full px-4 py-3 border border-slate-200 dark:border-slate-800 rounded-xl font-body text-slate-800 dark:text-slate-200 bg-white dark:bg-black focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-200 disabled:opacity-50"
+              className="w-full px-4 py-3 border border-slate-200 dark:border-slate-800 rounded-xl font-body text-slate-800 dark:text-slate-200 bg-white dark:bg-black focus:outline-none focus:border-slate-200 dark:focus:border-slate-800 focus:ring-0 focus-visible:outline-none focus-visible:border-slate-200 dark:focus-visible:border-slate-800 transition-all duration-200 disabled:opacity-50"
               placeholder="John Doe"
             />
           </motion.div>
@@ -133,7 +133,7 @@ function ContactSection({ id }: ContactSectionProps) {
               onChange={handleChange}
               required
               disabled={status === "loading" || status === "success"}
-              className="w-full px-4 py-3 border border-slate-200 dark:border-slate-800 rounded-xl font-body text-slate-800 dark:text-slate-200 bg-white dark:bg-black focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-200 disabled:opacity-50"
+              className="w-full px-4 py-3 border border-slate-200 dark:border-slate-800 rounded-xl font-body text-slate-800 dark:text-slate-200 bg-white dark:bg-black focus:outline-none focus:border-slate-200 dark:focus:border-slate-800 focus:ring-0 focus-visible:outline-none focus-visible:border-slate-200 dark:focus-visible:border-slate-800 transition-all duration-200 disabled:opacity-50"
               placeholder="john_doe@email.com"
             />
           </motion.div>
@@ -153,7 +153,7 @@ function ContactSection({ id }: ContactSectionProps) {
               required
               rows={5}
               disabled={status === "loading" || status === "success"}
-              className="w-full px-4 py-3 border border-slate-200 dark:border-slate-800 rounded-xl font-body text-slate-800 dark:text-slate-200 bg-white dark:bg-black focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-200 disabled:opacity-50"
+              className="w-full px-4 py-3 border border-slate-200 dark:border-slate-800 rounded-xl font-body text-slate-800 dark:text-slate-200 bg-white dark:bg-black focus:outline-none focus:border-slate-200 dark:focus:border-slate-800 focus:ring-0 focus-visible:outline-none focus-visible:border-slate-200 dark:focus-visible:border-slate-800 transition-all duration-200 disabled:opacity-50"
               placeholder="Your message here..."
             />
           </motion.div>
